@@ -37,6 +37,7 @@ git pull upstream main
 git checkout -b <your_branch_name>
 ```
 **9**. Make necessary changes and commit those changes
+
 **10**. Track your changes.
 ```
 git add .
