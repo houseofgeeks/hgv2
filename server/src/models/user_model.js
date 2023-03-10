@@ -16,7 +16,7 @@ const userSchema = mongoose.Schema(
     },
     rollNo: {
       type: String,
-      unique: true,
+       
     },
     linkedin_url: {
       type: String,
@@ -44,7 +44,7 @@ const userSchema = mongoose.Schema(
     },
     image: {
       type: Object,
-    //   required: true,
+     required: true,
     },
     isAdmin: {
         type: Boolean,
