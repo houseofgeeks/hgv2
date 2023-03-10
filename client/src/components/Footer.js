@@ -9,13 +9,13 @@ const Footer = () => {
   return (
     <div className="bg-[#0A0A0B] text-white">
       <div className="xs:flex">
-        <div className="p-16 w-1/2">
+        <div className="py-16 px-24 w-1/2">
           <div className="flex flex-col justify-center">
             <img className="max-w-[120px] pl-2" src={hgLogo} alt="" />
             <div className="hg text-2xl pt-1">House of Geeks</div>
           </div>
           <div className="max-w-sm">
-            <div className="mt-8 text-sm italic ">
+            <div className="mt-8 text-base ">
               “It is only when they go wrong that machines remind you how
               powerful they are.”
             </div>
@@ -67,33 +67,33 @@ const Footer = () => {
           </div>
           <div className="sm:flex mt-12">
             <div className="w-1/2">
-              <h1 className="text-lg font-light text-slate-300">Navigation</h1>
+              <h1 className="text-xl font-semibold text-slate-300">Navigation</h1>
               <ul className="items-center space-y-3 mt-4">
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     Home
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
                   </a>
                 </li>
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     Resources
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
                   </a>
                 </li>
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     Projects
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
                   </a>
                 </li>
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     Blogs
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
                   </a>
                 </li>
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     About
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
@@ -102,27 +102,27 @@ const Footer = () => {
               </ul>
             </div>
             <div className="w-1/2 mt-16 sm:mt-0">
-              <h1 className="text-lg font-light text-slate-300">Socials</h1>
+              <h1 className="text-xl font-semibold text-slate-300">Socials</h1>
               <ul className="items-center space-y-3 mt-4">
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     Instagram
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
                   </a>
                 </li>
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     LinkedIn
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
                   </a>
                 </li>
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     Twitter
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
                   </a>
                 </li>
-                <li className="text-white text-xs font-thin cursor-pointer">
+                <li className="text-white text-base font-thin cursor-pointer">
                   <a href="/">
                     Facebook
                     <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
@@ -133,12 +133,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-2/3 rounded bg-[#1d1e1e] text-center text-white flex flex-col justify-center mx-auto py-1 items-center">
+      <div className="w-2/3 rounded bg-[#131414] text-center text-white flex flex-col justify-center mx-auto py-2 items-center">
         <a
           href="https://github.com/houseofgeeks/hgv2"
-          className="text-center text-xs font-light"
+          className="text-center text-base font-light"
         >
-          View Source Code on{" "}
+          View Source Code on
           <img className="inline px-1 h-6 w-6" src={githubLogo} alt="" /> Github
         </a>
       </div>
