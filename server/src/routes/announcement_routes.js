@@ -5,6 +5,6 @@ const {checkLogin,checkAdmin}=require('../middlewares/authMiddleware');
 router.post('/',checkAdmin,createAnnouncement);
 router.delete('/:id',checkAdmin,deleteAnnouncement);
 router.patch('/:id',checkAdmin,updateAnnouncement);
-router.get('/all',checkLogin,getAllAnnouncements);
+router.get('/all',getAllAnnouncements);
 
 module.exports=router;
