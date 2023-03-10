@@ -7,13 +7,20 @@ const subtopicSchema = new mongoose.Schema({
     },
     resources: [
         {
-            type: String
+            url:{
+            type: String,
+            required: true
+        },
+        type:{
+            type: String,
+            required: true
         }
+    }
     ],
     compltetdBy: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Subtopic',
+            ref: 'User',
             index:true
         }
     ]
