@@ -57,20 +57,7 @@ const createUser=asyncHandler(async(req,res)=>{
     if(result){
         res.status(201).json(
             {
-                _id: newUser._id,
-                name: newUser.name,
-                email: newUser.email,
-                rollNo: newUser.rollNo,
-                linkedin_url: newUser.linkedin_url,
-                github_username: newUser.github_username,
-                resume_url: newUser.resume_url,
-                portfolio_url: newUser.portfolio_url,
-                twitter_url: newUser.twitter_url,
-                instagram_url: newUser.instagram_url,
-                leetcode_username: newUser.leetcode_username,
-                codeforces_username: newUser.codeforces_username,
-                image: newUser.image,
-                isAdmin: newUser.isAdmin,
+                newUser,
                 token: generateToken(newUser._id),
             }
         );
@@ -88,22 +75,10 @@ const loginUser=asyncHandler(async(req,res)=>{
 
     const user=await User.findOne({email});
     if(user && (await bcrypt.compare(password,user.password))){
+        const {password,...docs} = user.toObject();
         res.status(200).json(
             {
-                _id: user._id,
-                name: user.name,
-                email: user.email,
-                rollNo: user.rollNo,
-                linkedin_url: user.linkedin_url,
-                github_username: user.github_username,
-                resume_url: user.resume_url,
-                portfolio_url: user.portfolio_url,
-                twitter_url: user.twitter_url,
-                instagram_url: user.instagram_url,
-                leetcode_username: user.leetcode_username,
-                codeforces_username: user.codeforces_username,
-                image: user.image,
-                isAdmin: user.isAdmin,
+                user:docs,
                 token: generateToken(user._id),
             }
         );
