@@ -40,7 +40,9 @@ const updateFeed = asyncHandler(async (req, res) => {
 const deleteFeed = asyncHandler(async (req, res) => {
     try{
         const deleted=await Feed.findByIdAndDelete(req.params.id);
-        res.status(200).json({msg:"deleted feed is",deleted});
+        res.status(200).json({
+            "msg": "Feed successfully deleted",
+        });
     }catch(err){
         res.status(500).json(err);
     }
