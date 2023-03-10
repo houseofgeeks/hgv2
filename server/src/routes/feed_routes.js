@@ -6,6 +6,6 @@ router.post('/',checkAdmin,createFeed);
 router.patch('/:id',checkAdmin,updateFeed);
 router.delete('/:id',checkAdmin,deleteFeed);
 router.patch('/:id/upvote',checkLogin,upVoteFeed);
-router.get('/all',getAllFeeds);
+router.get('/all',checkLogin,getAllFeeds);
 
 module.exports=router;

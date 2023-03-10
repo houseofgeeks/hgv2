@@ -7,12 +7,10 @@ const createFeed = asyncHandler(async (req, res) => {
     const { feedDetails} = req.body;
     const user=req.user._id;
 
-    console.log(user)
-
     if (!feedDetails) {
         res.status(400).json({ message: "Please fill all the fields" });
     }
-
+    
     const newFeed = new Feed({
         feedDetails: feedDetails,
         user
@@ -21,17 +19,8 @@ const createFeed = asyncHandler(async (req, res) => {
     const result = await newFeed.save();
     
     if (result) {
-        res.status(201).json(
-            {
-                _id: newFeed._id,
-                feedDetails: newFeed.feedDetails,
-                userId: newFeed.user,
-                upVotes: newFeed.upVotes,
-                createdAt: newFeed.createdAt,
-                userName:user.name,
-                userImage:user.image
-            }
-    )} 
+        res.status(201).json({ message: "Feed created successfully" ,result});
+    } 
     else{
         res.status(400).json({ message: "Invalid feed data" });
     }
