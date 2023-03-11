@@ -7,6 +7,6 @@ const router = require("express").Router();
 router.post('/', checkAdmin, wingMiddleware, create);
 router.get('/', getAll);
 router.get('/levels/:id', getWingLevels);
-router.patch('/:id', checkAdmin, wingMiddleware, update);
+router.patch('/:id', checkAdmin, update);
 router.delete('/:id', checkAdmin, destroy);
 module.exports = router;
