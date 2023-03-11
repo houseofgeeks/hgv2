@@ -3,8 +3,6 @@ const User = require("../models/user_model");
 const generateToken = require("../config/jwt");
 const bcrypt = require("bcryptjs");
 const cloudinary = require("../config/cloudinary");
-
-const { formatFileSize } = require("../config/multer");
 const createUser = asyncHandler(async (req, res) => {
   const {
     name,
@@ -20,9 +18,11 @@ const createUser = asyncHandler(async (req, res) => {
     instagram_url,
     leetcode_username,
     codeforces_username,
+    image,
   } = req.body;
-  const image = req.files.image;
-  if (!name || !email || !password||!image ) {
+  console.log(image);
+
+  if (!name || !email || !password || !image) {
     res.status(400).json({ message: "Please fill all the fields" });
   }
   const checkUser = await User.findOne({ email });
@@ -31,10 +31,9 @@ const createUser = asyncHandler(async (req, res) => {
   }
   var salt = await bcrypt.genSalt(10);
 
-  const uploadedFile = await cloudinary.uploader.upload(image.tempFilePath, {
+  const uploadedFile = await cloudinary.uploader.upload(image, {
     folder: "hgv2",
   });
-
   const newUser = new User({
     name: name,
     email: email,

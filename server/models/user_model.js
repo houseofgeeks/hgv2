@@ -16,7 +16,6 @@ const userSchema = mongoose.Schema(
     },
     rollNo: {
       type: String,
-       
     },
     linkedin_url: {
       type: String,
@@ -27,8 +26,8 @@ const userSchema = mongoose.Schema(
     resume_url: {
       type: String,
     },
-    portfolio_url:{
-        type: String,
+    portfolio_url: {
+      type: String,
     },
     twitter_url: {
       type: String,
@@ -44,15 +43,15 @@ const userSchema = mongoose.Schema(
     },
     image: {
       type: String,
-     required: true,
+      required: true,
     },
     isAdmin: {
-        type: Boolean,
-        // required: true,
-        default: false,
-    }
+      type: Boolean,
+      // required: true,
+      default: false,
+    },
   },
   { timestamps: true }
 );
-const User=mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 module.exports = User;
