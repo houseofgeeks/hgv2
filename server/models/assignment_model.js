@@ -11,7 +11,7 @@ const assignmentSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    //required: true,
   },
   submitted: [
     {
@@ -23,14 +23,12 @@ const assignmentSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-    },
-  ],
-  verified: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+      verified: {
+        type: Boolean,
+        default: false
+      }
+    }
+  ]
 });
 
 const Assignment = mongoose.model("Assignment", assignmentSchema);
