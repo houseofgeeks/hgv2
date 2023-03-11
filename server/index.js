@@ -6,6 +6,7 @@ const userRoutes = require("./routes/user_routes");
 const announcementRoutes = require("./routes/announcement_routes");
 const feedRoutes = require("./routes/feed_routes");
 const wingRoutes = require("./routes/wing_routes");
+const levelRoutes = require("./routes/level_routes");
 const { connectDB } = require("./database/database");
 const bodyParser = require('body-parser');
 const cors = require("cors");
@@ -27,5 +28,5 @@ connectDB();
 app.use("/api/users", userRoutes);
 app.use("/api/feeds", feedRoutes);
 app.use("/api/wings", wingRoutes);
-
+app.use("/api/levels", levelRoutes);
 app.use("/api/announcements", announcementRoutes);

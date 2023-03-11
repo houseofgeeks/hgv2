@@ -14,9 +14,22 @@ const create = async (req, res) => {
         });
     }
 }
+const getWing=async(req,res)=>{
+    try {
+        const wing=await Wing.findById(req.params.id).populate('levels');
+        res.status(200).json(wing.levels);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: 'Something went wrong, unable to fetch wing',
+            status: false,
+            error: error
+        });
+    }
+}
 const getAll = async (req, res) => {
     try {
-        const wings = await Wing.find();
+        const wings = await Wing.find().populate('levels');
         res.status(200).json(wings);
     } catch (error) {
         console.log(error);
@@ -68,5 +81,5 @@ module.exports = {
     getAll,
     getWingLevels,
     update,
-    destroy
+    destroy,getWing
 }
