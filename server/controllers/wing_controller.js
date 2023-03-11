@@ -16,7 +16,15 @@ const create = async (req, res) => {
 }
 const getWing=async(req,res)=>{
     try {
-        const wing=await Wing.findById(req.params.id).populate('levels');
+        const wing=await Wing.findById(req.params.id).populate({
+            path:'levels',
+            populate:{
+                path:'topics',
+                populate:{
+                    path:'subtopics'
+                }
+            }
+    });
         res.status(200).json(wing.levels);
     } catch (error) {
         console.log(error);

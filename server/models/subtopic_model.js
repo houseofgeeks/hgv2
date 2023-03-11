@@ -14,6 +14,7 @@ const subtopicSchema = new mongoose.Schema({
       type: {
         type: String,
         required: true,
+        enum: ["read","watch"],
       },
     },
   ],
