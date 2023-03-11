@@ -54,7 +54,10 @@ const update = async (req, res) => {
 const destroy = async (req, res) => {
     try {
         const deletedWing = await Wing.findByIdAndDelete(req.params.id);
-        res.status(200).json(deletedWing);
+        res.status(200).json({
+            message: 'Wing deleted successfully',
+            deletedWing
+        });
     } catch (error) {
         console.log(error);
         res.status(400).json({
