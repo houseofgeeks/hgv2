@@ -43,7 +43,7 @@ const userSchema = mongoose.Schema(
       type: String,
     },
     image: {
-      type: Object,
+      type: String,
      required: true,
     },
     isAdmin: {
