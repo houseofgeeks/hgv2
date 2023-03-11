@@ -1,5 +1,7 @@
 import hgLogo from "../assets/hg_logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="bg-[#010203] h-[70px] relative px-24 py-4">
@@ -9,12 +11,20 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center">
           <li className="text-white  text-lg mx-4 underline decoration-[#EE2A7B] underline-offset-4">
-            Home
+            <Link to="/">Home</Link>
           </li>
-          <li className="text-slate-100  text-lg mx-4">Resources</li>
-          <li className="text-slate-100  text-lg mx-4">Projects</li>
-          <li className="text-slate-100  text-lg mx-4">Blogs</li>
-          <li className="text-slate-100  text-lg mx-4">About</li>
+          <li className="text-slate-100  text-lg mx-4">
+            <Link to="/resources">Resources</Link>
+          </li>
+          <li className="text-slate-100  text-lg mx-4">
+            <Link to="/">Projects</Link>
+          </li>
+          <li className="text-slate-100  text-lg mx-4">
+            <Link to="/">Blogs</Link>
+          </li>
+          <li className="text-slate-100  text-lg mx-4">
+            <Link to="/">About</Link>
+          </li>
         </ul>
         <div className="flex items-center">
           <div className="w-6 h-6 rounded-full bg-slate-300"></div>
