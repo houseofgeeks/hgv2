@@ -7,11 +7,13 @@ const announcementRoutes = require("./routes/announcement_routes");
 const feedRoutes = require("./routes/feed_routes");
 const wingRoutes = require("./routes/wing_routes");
 const levelRoutes = require("./routes/level_routes");
+const topicRoutes=require("./routes/topic_routes");
+const subtopicRoutes=require("./routes/subtopic_routes");
 const { connectDB } = require("./database/database");
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const options = {
-  origin: ["http://localhost:3000", "https://hgv2.vercel.app/"],
+  origin: ["http://localhost:3000", "https://hgv2.vercel.app/","*"],
   useSuccessStatus: 200,
 };
 dotenv.config();
@@ -30,3 +32,5 @@ app.use("/api/feeds", feedRoutes);
 app.use("/api/wings", wingRoutes);
 app.use("/api/levels", levelRoutes);
 app.use("/api/announcements", announcementRoutes);
+app.use("/api/topics",topicRoutes);
+app.use('/api/subtopics',subtopicRoutes);
