@@ -18,6 +18,12 @@ const levelSchema = new mongoose.Schema(
         ref: "Topic",
       },
     ],
+    assignments: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Assignment",
+      }
+    ]
   },
   { timestamps: true }
 );
