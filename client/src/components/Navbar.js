@@ -1,8 +1,8 @@
 import hgLogo from "../assets/hg_logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ pathname }) => {
   return (
     <div className="bg-[#010203] h-[70px] relative px-24 py-4">
       <div className="flex justify-between items-center h-full">
@@ -10,10 +10,20 @@ const Navbar = () => {
           <img className="max-w-[70px]" src={hgLogo} alt="" />
         </div>
         <ul className="flex items-center">
-          <li className="text-white  text-lg mx-4 underline decoration-[#EE2A7B] underline-offset-4">
+          <li
+            className={`text-white  text-lg mx-4 ${
+              pathname === "/" && "underline"
+            } ${pathname === "/" && "decoration-[#EE2A7B]"} underline-offset-4`}
+          >
             <Link to="/">Home</Link>
           </li>
-          <li className="text-slate-100  text-lg mx-4">
+          <li
+            className={`text-slate-100 ${
+              pathname === "/resources" && "underline"
+            } ${
+              pathname === "/resources" && "decoration-[#EE2A7B]"
+            } text-lg mx-4 underline-offset-4`}
+          >
             <Link to="/resources">Resources</Link>
           </li>
           <li className="text-slate-100  text-lg mx-4">
