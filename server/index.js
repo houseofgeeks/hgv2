@@ -18,7 +18,8 @@ const options = {
 };
 dotenv.config();
 app.use(cors(options));
-app.listen(PORT, () => {
+
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 app.use(bodyParser.json());
