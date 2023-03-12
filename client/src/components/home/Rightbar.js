@@ -5,22 +5,22 @@ const Rightbar = () => {
   const [announcements, setAnnouncements] = useState([]);
   const [feeds, setFeeds] = useState([]);
 
-  const fetchAnnouncements = async () => {
-    const { data } = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URI}/api/announcements/all`
-    );
-    setAnnouncements(data);
-  };
+  // const fetchAnnouncements = async () => {
+  //   const { data } = await axios.get(
+  //     `${process.env.REACT_APP_BACKEND_URI}/api/announcements/all`
+  //   );
+  //   setAnnouncements(data);
+  // };
 
-  const fetchFeeds = async () => {
-    const { data } = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URI}/api/feeds/all`
-    );
-    setFeeds(data);
-  };
+  // const fetchFeeds = async () => {
+  //   const { data } = await axios.get(
+  //     `${process.env.REACT_APP_BACKEND_URI}/api/feeds/all`
+  //   );
+  //   setFeeds(data);
+  // };
   useEffect(() => {
-    fetchAnnouncements();
-    fetchFeeds();
+    // fetchAnnouncements();
+    // fetchFeeds();
   }, []);
 
   return (
