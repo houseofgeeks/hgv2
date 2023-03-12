@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const WingCard = ({ title, description, image, url }) => {
   return (
-    <div className="first:mt-0 my-3 sm:my-0">
+    <div className="first:mt-0 my-3 xs:my-0">
       <img src={image} alt={title} className="w-full" />
       <h1 className="font-normal text-xl my-2">{title}</h1>
       <p className="text-md text-slate-200 font-light line-clamp-3">
