@@ -1,9 +1,11 @@
 import hgLogo from "../assets/hg_logo.svg";
 import iiitrLogo from "../assets/iiitr_logo.svg";
+import slackLogo from "../assets/slack_logo.svg";
 import ss from "../assets/ss.png";
 import ab from "../assets/ab.png";
-import { BsArrowUpRight } from "react-icons/bs";
+import { FiArrowUpRight } from "react-icons/fi";
 import githubLogo from "../assets/github_logo.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -39,7 +41,7 @@ const Footer = () => {
         <div className="w-1/2 p-20">
           <div className="flex flex-col justify-center space-y-8 lg:w-3/5 w-3/4">
             <div className="bt1 text-center py-2 px-4 rounded-md">
-              <a href="/">
+              <Link to="http://iiitranchi.ac.in/" target="_blank">
                 <img
                   className="max-w-[50px] px-2 inline"
                   src={iiitrLogo}
@@ -48,56 +50,58 @@ const Footer = () => {
                 <span className="hidden sm:inline text-sm md:text-base">
                   IIIT Ranchi Official Website
                 </span>
-                <BsArrowUpRight className="text-white xl:inline text-sm ml-2 font-bold hidden" />
-              </a>
+                <FiArrowUpRight className="text-white xl:inline text-base ml-1 mb-1 font-bold hidden" />
+              </Link>
             </div>
             <div className="bt2 text-center py-2 px-4 rounded-md">
-              <a href="/">
+              <Link to="/" target="_blank">
                 <img
                   className="max-w-[50px] px-2 inline"
-                  src={iiitrLogo}
+                  src={slackLogo}
                   alt=""
                 />
                 <span className="hidden sm:inline text-sm md:text-base">
                   Join our Slack Community
                 </span>
-                <BsArrowUpRight className="text-white xl:inline text-sm ml-2 font-bold hidden" />
-              </a>
+                <FiArrowUpRight className="text-white xl:inline text-base ml-1 mb-1 font-bold hidden" />
+              </Link>
             </div>
           </div>
           <div className="sm:flex mt-12">
             <div className="w-1/2">
-              <h1 className="text-xl font-semibold text-slate-300">Navigation</h1>
+              <h1 className="text-xl font-semibold text-slate-300">
+                Navigation
+              </h1>
               <ul className="items-center space-y-3 mt-4">
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     Home
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     Resources
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     Projects
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     Blogs
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     About
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -105,28 +109,28 @@ const Footer = () => {
               <h1 className="text-xl font-semibold text-slate-300">Socials</h1>
               <ul className="items-center space-y-3 mt-4">
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     Instagram
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     LinkedIn
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     Twitter
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
                 <li className="text-white text-base font-thin cursor-pointer">
-                  <a href="/">
+                  <Link to="/">
                     Facebook
-                    <BsArrowUpRight className="text-white inline text-[12px] pl-1" />
-                  </a>
+                    <FiArrowUpRight className="text-white inline text-[12px] ml-[2px] mb-[3px]" />
+                  </Link>
                 </li>
               </ul>
             </div>
