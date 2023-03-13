@@ -24,8 +24,8 @@ const Levels = () => {
     return (
         <div className="px-24 min-h-[90vh] text-white py-5 bg-[#010203]">
             <h1 className="font-normal text-xl mb-6">
-                <NavLink className='underline' to={`/resources`}>Resources</NavLink> /  
-                <NavLink to={`/resources/levels`} > Software Development Wing</NavLink>
+                <NavLink className='underline underline-offset-2' to={`/resources`}>Resources</NavLink> /  
+                <NavLink to={`/resources/1`} > Software Development Wing</NavLink>
             </h1>
             <div className='flex flex-col gap-10'>
                 {
