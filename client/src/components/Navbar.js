@@ -1,6 +1,7 @@
 import hgLogo from "../assets/hg_logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const Navbar = ({ pathname }) => {
   return (
@@ -12,16 +13,14 @@ const Navbar = ({ pathname }) => {
         <ul className="flex items-center">
           <li
             className={`text-white  text-lg mx-4 ${
-              pathname === "/" && "underline"
-            } ${pathname === "/" && "decoration-[#EE2A7B]"} underline-offset-4`}
+              pathname === "/" && "underline decoration-[#EE2A7B]"
+            } underline-offset-4`}
           >
             <Link to="/">Home</Link>
           </li>
           <li
             className={`text-slate-100 ${
-              pathname === "/resources" && "underline"
-            } ${
-              pathname === "/resources" && "decoration-[#EE2A7B]"
+              pathname.includes("resources") && "underline decoration-[#EE2A7B]"
             } text-lg mx-4 underline-offset-4`}
           >
             <Link to="/resources">Resources</Link>
