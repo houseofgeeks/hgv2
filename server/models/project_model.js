@@ -17,13 +17,13 @@
     wingsInvolved:[
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"Wing"
+            ref:'Wing'
         }
     ],
     peopleInvolved:[
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"User"
+            ref:'User' 
         }
     ],
     description:{
