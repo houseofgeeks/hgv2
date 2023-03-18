@@ -65,8 +65,6 @@ const Tasks = () => {
       status:"orange",
     },
   ]
-    
-  
 
   return (
     <>
@@ -106,7 +104,7 @@ const Tasks = () => {
           <div className="pt-[10px]">
             <div className="bg-[#131414] py-[20px] px-[50px] flex justify-left items-center"> 
               <div className="py-4 w-32">
-                <img src={badge1} className="h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"></img>
+                <img src={badge1} alt="badge" className="h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"></img>
               </div> 
               <div className="py-12  ml-12 pl-[4px]">
                 <p className="text-[20px] font-semibold">Congratulation! You have Completed the Level 1 of SDE Wing Learning Resources.</p>

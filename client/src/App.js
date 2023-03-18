@@ -1,11 +1,13 @@
 import "./App.css";
-import { Route, Routes, useLocation, useParams } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Resources from "./pages/Resources";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Levels from "./pages/Levels";
 import Tasks from "./pages/Tasks";
+import Projects from "./pages/Projects";
+
 function App() {
   const { pathname } = useLocation();
   
@@ -18,6 +20,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/resources/:id?" element={<Levels />} />
         <Route path="/resources/:id?/tasks?" element={<Tasks />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
       <Footer />
     </div>
