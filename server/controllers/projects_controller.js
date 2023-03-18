@@ -1,5 +1,5 @@
 const projectDB = require('../models/project_model')
-
+const userDb=require('../models/user_model')
 const asyncHandler = require("express-async-handler")
 
 const createProject = asyncHandler(async (req, res) => {
@@ -18,6 +18,9 @@ const createProject = asyncHandler(async (req, res) => {
 
     try {
         const savedProject = await newProject.save();
+        const updateUser=await userDb.findByIdAndUpdate({_id:leadBy},{
+            $push: { projectsInvolved: savedProject._id   }
+        },{new:true})
         res.status(200).json({ message: "Saved the project Successfully", savedProject })
 
     } catch (error) {
@@ -75,6 +78,32 @@ const getAllProjects = asyncHandler(async (req, res) => {
 
 })
 
+const getUpcomingProjects=asyncHandler(async(req,res)=>{
+    try {
+        const project=await projectDB.find({ status: /^upcoming$/i }).populate('wingsInvolved').populate('peopleInvolved').populate('leadBy')
+        res.status(200).json(project)
+    } catch (error) {
+        res.status(400).json({message:"Error in geting Upcoming project"})
+    }
+ 
+})
+const getOngoingProjects=asyncHandler(async(req,res)=>{
+    try {
+        const project=await projectDB.find({ status: /^ongoing$/i }).populate('wingsInvolved').populate('peopleInvolved').populate('leadBy')
+        res.status(200).json(project)
+    } catch (error) {
+        res.status(400).json({message:"Error in geting Ongoing project"})
+    }
+})
+const getPastProjects=asyncHandler(async(req,res)=>{
+    try {
+        const project=await projectDB.find({ status: /^past$/i }).populate('wingsInvolved').populate('peopleInvolved').populate('leadBy')
+        res.status(200).json(project)
+    } catch (error) {
+        res.status(400).json({message:"Error in geting Past project"})
+    }
+})
+
 const updateProjectStatus = asyncHandler(async (req, res) => {
     const { status } = req.body;
     const project = await projectDB.findById({ _id: req.params.id })
@@ -104,6 +133,9 @@ const updateProjectPeople = asyncHandler(async (req, res) => {
             const updatedProject = await projectDB.findByIdAndUpdate(id, {
                 $push: { peopleInvolved: people  }
             }, { new: true })
+            const updateUser=await userDb.findByIdAndUpdate({_id:people},{
+                $push: { projectsInvolved: id  }
+            },{new:true})
             res.status(200).json({ message: "Updated Successfully", updatedProject })
         }
         else {
@@ -116,4 +148,4 @@ const updateProjectPeople = asyncHandler(async (req, res) => {
 })
 
 
-module.exports = { createProject, getProject, getAllProjects, updateProjectStatus, updateProjectPeople, deleteProject }
+module.exports = { createProject, getProject, getAllProjects,getUpcomingProjects, updateProjectStatus, updateProjectPeople,getOngoingProjects,getPastProjects, deleteProject }
