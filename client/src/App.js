@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Levels from "./pages/Levels";
 import Tasks from "./pages/Tasks";
 import Projects from "./pages/Projects";
+import Profile from "./pages/Profile";
 
 function App() {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ function App() {
         <Route path="/resources/:id?" element={<Levels />} />
         <Route path="/resources/:id?/tasks?" element={<Tasks />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </div>

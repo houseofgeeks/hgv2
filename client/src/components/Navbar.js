@@ -39,11 +39,13 @@ const Navbar = ({ pathname }) => {
             <Link to="/">About</Link>
           </li>
         </ul>
-        <div className="flex items-center">
-          <div className="w-6 h-6 rounded-full bg-slate-300"></div>
-          <p className="text-white mx-2">HgV2</p>
-          <IoIosArrowDown className="text-white" />
-        </div>
+        <Link to={'/profile'}>
+          <div className="flex items-center">
+            <div className="w-6 h-6 rounded-full bg-slate-300"></div>
+            <p className="text-white mx-2">HgV2</p>
+            <IoIosArrowDown className="text-white" />
+          </div>
+        </Link>
       </div>
     </div>
   );
