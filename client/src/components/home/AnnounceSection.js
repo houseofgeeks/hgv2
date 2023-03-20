@@ -3,7 +3,7 @@ const AnnounceSection = ({ feed,items }) => {
   return (
     <div className="flex items-center my-4">
       <div className="w-9 h-9 rounded-full relative bg-slate-100">
-        <img src={items.user.image.filePath} className='w-full h-full object-cover rounded-full' alt="" />
+        <img src={items.user.image} className='w-full h-full object-cover rounded-full' alt="" />
       </div>
       <div className="w-[100%] ml-5">
         {

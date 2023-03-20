@@ -1,6 +1,7 @@
 import hgLogo from "../assets/hg_logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import { useEffect } from "react";
 
 const Navbar = ({ pathname }) => {
   
@@ -13,40 +14,42 @@ const Navbar = ({ pathname }) => {
         <ul className="flex items-center">
           <li
             className={`text-white  text-lg mx-4 ${
-              pathname === "/" && "underline"
-            } ${pathname === "/" && "decoration-[#EE2A7B]"} underline-offset-4`}
+              pathname === "/" && "underline decoration-[#EE2A7B]"
+            } underline-offset-4`}
           >
             <Link to="/">Home</Link>
           </li>
           <li
             className={`text-slate-100 ${
-              pathname.split('/')[1] === "resources" && "underline"
-            } ${
-              pathname.split('/')[1] === "resources" && "decoration-[#EE2A7B]"
+              pathname.includes("resources") && "underline decoration-[#EE2A7B]"
             } text-lg mx-4 underline-offset-4`}
           >
             <Link to="/resources">Resources</Link>
           </li>
-          <li className="text-slate-100  text-lg mx-4">
-            <Link to="/">Projects</Link>
+          <li
+            className={`text-slate-100 ${
+              pathname.includes("projects") && "underline decoration-[#EE2A7B]"
+            } text-lg mx-4 underline-offset-4`}
+          >
+            <Link to="/projects">Projects</Link>
           </li>
           <li className="text-slate-100  text-lg mx-4">
             <Link to="/">Blogs</Link>
           </li>
           <li className={`text-slate-100 ${
-              pathname.split('/')[1] === "about" && "underline"
-            } ${
-              pathname.split('/')[1] === "about" && "decoration-[#EE2A7B]"
+              pathname.includes("about") && "underline decoration-[#EE2A7B]"
             } text-lg mx-4 underline-offset-4`}
             >
             <Link to="/about">About</Link>
           </li>
         </ul>
-        <div className="flex items-center">
-          <div className="w-6 h-6 rounded-full bg-slate-300"></div>
-          <p className="text-white mx-2">HgV2</p>
-          <IoIosArrowDown className="text-white" />
-        </div>
+        <Link to={'/profile'}>
+          <div className="flex items-center">
+            <div className="w-6 h-6 rounded-full bg-slate-300"></div>
+            <p className="text-white mx-2">HgV2</p>
+            <IoIosArrowDown className="text-white" />
+          </div>
+        </Link>
       </div>
     </div>
   );

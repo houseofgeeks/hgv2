@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&family=Urbanist:wght@400;600;700&family=Varela&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Space+Grotesk&display=swap');
 
 * {
   margin: 0;
@@ -21,4 +21,8 @@
 
 .bt2{
   background: linear-gradient(114.77deg, rgba(239, 134, 255, 0.3) 3.4%, rgba(89, 25, 167, 0.3) 100%);
+}
+
+.read{
+  font-family: 'Space Grotesk';
 }
