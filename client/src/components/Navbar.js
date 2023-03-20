@@ -3,6 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
 
 const Navbar = ({ pathname }) => {
+  
   return (
     <div className="bg-[#010203] h-[70px] relative px-24 py-4">
       <div className="flex justify-between items-center h-full">
@@ -19,9 +20,9 @@ const Navbar = ({ pathname }) => {
           </li>
           <li
             className={`text-slate-100 ${
-              pathname === "/resources" && "underline"
+              pathname.split('/')[1] === "resources" && "underline"
             } ${
-              pathname === "/resources" && "decoration-[#EE2A7B]"
+              pathname.split('/')[1] === "resources" && "decoration-[#EE2A7B]"
             } text-lg mx-4 underline-offset-4`}
           >
             <Link to="/resources">Resources</Link>
@@ -32,8 +33,13 @@ const Navbar = ({ pathname }) => {
           <li className="text-slate-100  text-lg mx-4">
             <Link to="/">Blogs</Link>
           </li>
-          <li className="text-slate-100  text-lg mx-4">
-            <Link to="/">About</Link>
+          <li className={`text-slate-100 ${
+              pathname.split('/')[1] === "about" && "underline"
+            } ${
+              pathname.split('/')[1] === "about" && "decoration-[#EE2A7B]"
+            } text-lg mx-4 underline-offset-4`}
+            >
+            <Link to="/about">About</Link>
           </li>
         </ul>
         <div className="flex items-center">
