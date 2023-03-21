@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import { useEffect } from "react";
 
 const Navbar = ({ pathname }) => {
+  
   return (
     <div className="bg-[#010203] h-[70px] relative px-24 py-4">
       <div className="flex justify-between items-center h-full">
@@ -35,8 +36,11 @@ const Navbar = ({ pathname }) => {
           <li className="text-slate-100  text-lg mx-4">
             <Link to="/">Blogs</Link>
           </li>
-          <li className="text-slate-100  text-lg mx-4">
-            <Link to="/">About</Link>
+          <li className={`text-slate-100 ${
+              pathname.includes("about") && "underline decoration-[#EE2A7B]"
+            } text-lg mx-4 underline-offset-4`}
+            >
+            <Link to="/about">About</Link>
           </li>
         </ul>
         <Link to={'/profile'}>

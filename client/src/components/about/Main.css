@@ -1,0 +1,34 @@
+.main-bg-1 {
+    background-image: linear-gradient(114.77deg, #1FCFF1 3.4%, #193783 100%);
+    opacity: 0.28;
+    filter: blur(50px);
+    border-radius: 50%;
+}
+
+.main-bg-2 {
+    background: linear-gradient(114.77deg, #19FB9B 3.4%, #08716A 100%);
+    opacity: 0.18;
+    filter: blur(50px);
+    border-radius: 50%;
+}
+
+.main-bg-3 {
+    background: linear-gradient(114.77deg, #EF86FF 3.4%, #5919A7 100%);
+    opacity: 0.18;
+    filter: blur(50px);
+    border-radius: 50%;
+}
+
+.main-bg-text{
+    font-family: 'Gayathri';
+}
+
+.main-bg-text-shadow {
+    font-family: 'Gayathri';
+    background: linear-gradient(181.55deg, rgba(255, 255, 255, 0) 14.17%, rgba(255, 255, 255, 0.17) 98.68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    text-fill-color: transparent;
+}
