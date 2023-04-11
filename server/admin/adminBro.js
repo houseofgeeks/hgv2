@@ -4,10 +4,10 @@ const AdminJSExpress = require("@adminjs/express");
 const AdminJSMongoose = require("@adminjs/mongoose");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const DEFAULT_ADMIN = {
-  email: "admin@example.com",
-  password: "password",
-};
+// const DEFAULT_ADMIN = {
+//   email: "admin@example.com",
+//   password: "password",
+// };
 const AnnouncementModel = require("../models/announcement_model");
 const FeedModel = require("../models/feed_model");
 const WingModel = require("../models/wing_model");
