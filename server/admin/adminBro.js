@@ -40,25 +40,25 @@ const admin = new AdminJS({
   rootPath: "/admin",
 });
 
-const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
+const adminRouter = AdminJSExpress.buildRouter(
   admin,
-  {
-    authenticate,
-    cookieName: "adminjs",
-    cookiePassword: "sessionsecret",
-  },
-  null,
-  {
-    // store: sessionStore,
-    resave: true,
-    saveUninitialized: true,
-    secret: "sessionsecret",
-    cookie: {
-      httpOnly: process.env.NODE_ENV === "production",
-      secure: process.env.NODE_ENV === "production",
-    },
-    // name: "Wagen Wizard",
-  }
+//   {
+//     authenticate,
+//     cookieName: "adminjs",
+//     cookiePassword: "sessionsecret",
+//   },
+//   null,
+//   {
+//     // store: sessionStore,
+//     resave: true,
+//     saveUninitialized: true,
+//     secret: "sessionsecret",
+//     cookie: {
+//       httpOnly: process.env.NODE_ENV === "production",
+//       secure: process.env.NODE_ENV === "production",
+//     },
+//     // name: "Wagen Wizard",
+//   }
 );
 
 module.exports = { admin, adminRouter };
