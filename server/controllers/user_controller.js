@@ -82,4 +82,114 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { createUser, loginUser };
+const getUser=asyncHandler(async(req,res)=>{
+  const id=req.params.id;
+  try {
+    
+    const user=await User.findById({_id:id}).populate('projectsInvolved')
+    if(user)
+    {
+
+      res.status(200).json(user)
+    }
+    else
+    {
+      res.status(404).json({message:"User not found"})
+    }
+  } catch (error) {
+    res.status(500).json({message:"Error in finding user",error})
+  }
+})
+
+const updateUser=asyncHandler(async(req,res)=>{
+  const id=req.params.id;
+  const user=await User.findById({_id:id})
+  try {
+    if(user){
+      const{
+        linkedin_url,
+        github_username,
+        resume_url,
+        portfolio_url,
+        twitter_url,
+        instagram_url,
+        leetcode_username,
+        codeforces_username,
+        image,
+      }=req.body;
+      var uploadedFile;
+      if(image)
+      {
+        uploadedFile = await cloudinary.uploader.upload(image, {
+          folder: "hgv2",
+        });
+      }
+      try {
+        const updatedUser=await User.findByIdAndUpdate({_id:id},{
+          linkedin_url:linkedin_url!==undefined?linkedin_url:user.linkedin_url,
+          github_username:github_username!==undefined?github_username:user.github_username,
+          resume_url:resume_url!==undefined?resume_url:user.resume_url,
+          portfolio_url:portfolio_url!==undefined?portfolio_url:user.portfolio_url,
+          twitter_url:twitter_url!==undefined?twitter_url:user.twitter_url,
+          instagram_url:instagram_url!==undefined?instagram_url:user.instagram_url,
+          leetcode_username:leetcode_username!==undefined?leetcode_username:user.leetcode_username,
+          codeforces_username:codeforces_username!==undefined?codeforces_username:user.codeforces_username,
+          image:image!==undefined?uploadedFile.secure_url:user.image,
+        },{new:true})
+        res.status(200).json({message:"updated user successfully",updatedUser})
+      } catch (error) {
+        res.status(500).json({message:"Error in updating User",error})
+        console.log("Error in updating user")
+      }
+      
+    }
+    else
+    {
+      res.status(404).json({message:"User not found"})
+    }
+  } catch (error) {
+    console.log("Error in finding user")
+      res.status(500).json({message:"Error in finding user",error})
+  }
+  
+})
+
+
+const updatePassword=asyncHandler(async(req,res)=>{
+  const id=req.params.id;
+  try {
+    const user=await User.findById({_id:id})
+    if(user)
+    {
+        const{oldpassword,newpassword}=req.body;
+        const compare=await bcrypt.compare(oldpassword,user.password)
+        if(compare)
+        {
+          var salt = await bcrypt.genSalt(10);
+          try {
+            const updatedUser=await User.findByIdAndUpdate({_id:id},{
+              password:await bcrypt.hash(newpassword,salt)
+            },{new:true})
+            res.status(200).json({message:"Password updated successfully",updatedUser})
+          } catch (error) {
+            res.status(500).json({message:"Error in updating password"})
+          }
+         
+        }
+        else
+        {
+          res.status(400).json({message:"Old Password doesnot match"});
+        }
+    }
+    else
+    {
+      res.status(404).json({message:"User not found"})
+    }
+  } catch (error) {
+    console.log("Password updating error");
+    res.status(500).json({message:"Error in updating password",error})
+  }
+  
+})
+
+module.exports = { createUser, loginUser ,getUser,updateUser,updatePassword};

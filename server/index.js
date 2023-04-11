@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 module.exports = app;
+const app = express(); 
 const PORT = 8000;
 const {admin}=require('./admin/adminBro')
 const {adminRouter}=require('./admin/adminBro')
@@ -12,6 +13,7 @@ const wingRoutes = require("./routes/wing_routes");
 const levelRoutes = require("./routes/level_routes");
 const topicRoutes=require("./routes/topic_routes");
 const subtopicRoutes=require("./routes/subtopic_routes");
+const projectRoutes=require("./routes/project_routes");
 const { connectDB } = require("./database/database");
 const bodyParser = require('body-parser');
 const cors = require("cors");
@@ -39,3 +41,4 @@ app.use("/api/levels", levelRoutes);
 app.use("/api/announcements", announcementRoutes);
 app.use("/api/topics",topicRoutes);
 app.use('/api/subtopics',subtopicRoutes);
+app.use('/api/projects',projectRoutes);
