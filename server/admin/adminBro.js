@@ -21,7 +21,10 @@ const authenticate = async (email, password) => {
   if (user && (await bcrypt.compare(password, user.password))&&user.isAdmin) {
     return Promise.resolve(user);
   }
-  return false;
+  console.log(user)
+  return Promise.reject(user).catch((err) => {
+    console.log(err);
+  });
 };
 AdminJS.registerAdapter(AdminJSMongoose);
 const admin = new AdminJS({
@@ -50,7 +53,6 @@ const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
       httpOnly: process.env.NODE_ENV === "production",
       secure: process.env.NODE_ENV === "production",
     },
-    // name: "Wagen Wizard",
   }
 );
 
