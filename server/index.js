@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 module.exports = app;
-const app = express(); 
+// const app = express(); 
 const PORT = 8000;
 const {admin}=require('./admin/adminBro')
 const {adminRouter}=require('./admin/adminBro')
