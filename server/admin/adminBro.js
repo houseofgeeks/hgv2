@@ -27,24 +27,24 @@ AdminJS.registerAdapter(AdminJSMongoose);
 const admin = new AdminJS({
   databases: [mongoose],
   // resources: AdminJSMongoose.buildResources([DriverModel]),
-  resources: [
-    {
-      resource: AnnouncementModel,
-      options: {
-        parent: {
-          // name:'Drivers'
-        },
-      },
-    },
-    {
-      resource: FeedModel,
-      options: {
-        parent: {
-          name: "Feeds",
-        },
-      },
-    },
-  ],
+//   resources: [
+//     {
+//       resource: AnnouncementModel,
+//       options: {
+//         parent: {
+//           // name:'Drivers'
+//         },
+//       },
+//     },
+//     {
+//       resource: FeedModel,
+//       options: {
+//         parent: {
+//           name: "Feeds",
+//         },
+//       },
+//     },
+//   ],
   branding: {
     companyName: "House of Geeks",
     logo: false,
@@ -59,7 +59,11 @@ const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
     cookieName: "adminjs",
     cookiePassword: "sessionsecret",
   },
-  null,
+  {
+    authenticate,
+    cookieName: "adminjs",
+    cookiePassword: "sessionsecret",
+  },
   {
     // store: sessionStore,
     resave: true,
