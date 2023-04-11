@@ -21,30 +21,11 @@ const authenticate = async (email, password) => {
   if (user && (await bcrypt.compare(password, user.password))&&user.isAdmin) {
     return Promise.resolve(user);
   }
-  return;
+  return false;
 };
 AdminJS.registerAdapter(AdminJSMongoose);
 const admin = new AdminJS({
   databases: [mongoose],
-  // resources: AdminJSMongoose.buildResources([DriverModel]),
-//   resources: [
-//     {
-//       resource: AnnouncementModel,
-//       options: {
-//         parent: {
-//           // name:'Drivers'
-//         },
-//       },
-//     },
-//     {
-//       resource: FeedModel,
-//       options: {
-//         parent: {
-//           name: "Feeds",
-//         },
-//       },
-//     },
-//   ],
   branding: {
     companyName: "House of Geeks",
     logo: false,
@@ -59,11 +40,7 @@ const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
     cookieName: "adminjs",
     cookiePassword: "sessionsecret",
   },
-  {
-    authenticate,
-    cookieName: "adminjs",
-    cookiePassword: "sessionsecret",
-  },
+  null,
   {
     // store: sessionStore,
     resave: true,
