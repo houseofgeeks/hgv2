@@ -1,6 +1,10 @@
 const express = require("express");
+const app = express();
+module.exports = app;
 const app = express(); 
 const PORT = 8000;
+const {admin}=require('./admin/adminBro')
+const {adminRouter}=require('./admin/adminBro')
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/user_routes");
 const announcementRoutes = require("./routes/announcement_routes");
@@ -18,12 +22,13 @@ const options = {
   useSuccessStatus: 200,
 };
 dotenv.config();
-app.use(cors(options));
+app.use(cors(options)); 
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 app.use(bodyParser.json());
+app.use(admin.options.rootPath, adminRouter)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 

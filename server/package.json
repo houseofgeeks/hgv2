@@ -8,6 +8,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@adminjs/express": "^5.1.0",
+    "@adminjs/mongoose": "^3.0.3",
+    "adminjs": "^6.8.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cloudinary": "^1.35.0",

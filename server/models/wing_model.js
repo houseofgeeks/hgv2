@@ -19,7 +19,18 @@ const wingSchema = new mongoose.Schema(
         ref: "Level",
       },
     ],
+    lead:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"User"
+    },
+    coordinators:[
+      {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
+      }
+    ]
   },
+
   { timestamps: true }
 );
 
