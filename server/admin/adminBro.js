@@ -14,6 +14,7 @@ const WingModel = require("../models/wing_model");
 const LevelModel = require("../models/level_model");
 const TopicModel = require("../models/topic_model");
 const SubtopicModel = require("../models/subtopic_model");
+const AssignmentModel=require('../models/assignment_model')
 const UserModel = require("../models/user_model");
 
 const authenticate = async (email, password) => {
@@ -38,6 +39,7 @@ const admin = new AdminJS({
 
 const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
   admin,
+  // app,
   {
     authenticate,
     cookieName: "adminjs",
@@ -47,13 +49,15 @@ const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
   {
     // store: sessionStore,
     resave: true,
+    httpOnly:false,
     saveUninitialized: true,
     secret: "sessionsecret",
-    cookie: {
-      httpOnly: process.env.NODE_ENV === "production",
-      secure: process.env.NODE_ENV === "production",
-    },
-  }
+    // cookie: {
+    //   httpOnly: process.env.NODE_ENV === "production",
+    //   secure: process.env.NODE_ENV === "production",
+    // },
+  },
+  // preDefinedRouter
 );
 
 module.exports = { admin, adminRouter };
