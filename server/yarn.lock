@@ -1478,6 +1478,11 @@
   resolved "https://registry.npmjs.org/@tiptap/core/-/core-2.0.0-beta.217.tgz"
   integrity sha512-Vifwcg5SglkVjEmtFbnwHOKWU4UUenOhe7ke5fqGhh7FNfGkccu6sK8W1JTDbG4ARWZ1b/632kQ51YE+WuPe7g==
 
+"@tiptap/core@^2.0.0":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.0.3.tgz#dfd55124b3e7b0482e5ccb8be46eb9c3189167e2"
+  integrity sha512-jLyVIWAdjjlNzrsRhSE2lVL/7N8228/1R1QtaVU85UlMIwHFAcdzhD8FeiKkqxpTnGpaDVaTy7VNEtEgaYdCyA==
+
 "@tiptap/core@^2.0.0-beta.217":
   version "2.0.2"
   resolved "https://registry.npmjs.org/@tiptap/core/-/core-2.0.2.tgz"
@@ -4795,7 +4800,7 @@ tr46@^3.0.0:
   dependencies:
     punycode "^2.1.1"
 
-tslib@^2.0.1:
+tslib@^2.0.1, tslib@^2.3.1:
   version "2.5.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.5.0.tgz"
   integrity sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==
