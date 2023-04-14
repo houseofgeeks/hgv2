@@ -5,7 +5,7 @@ const AdminJSMongoose = require("@adminjs/mongoose");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const session = require('express-session')
-const Connect = require('connect-pg-simple')
+const Connect = require('connect-mongo')
 require("dotenv").config();
 const DEFAULT_ADMIN = {
   email: "admin@example.com",
@@ -19,6 +19,7 @@ const TopicModel = require("../models/topic_model");
 const SubtopicModel = require("../models/subtopic_model");
 const AssignmentModel = require("../models/assignment_model");
 const UserModel = require("../models/user_model");
+const MongoStore = require("connect-mongo");
 
 const authenticate = async (email, password) => {
   const user = await UserModel.findOne({ email });
@@ -39,14 +40,11 @@ const admin = new AdminJS({
   },
   rootPath: "/admin",
 });
-const ConnectSession = Connect(session)
-const sessionStore = new ConnectSession({
-  conObject: {
-    connectionString:process.env.POSTGRES_URI,
-    ssl: {rejectUnauthorized: false},
-  },
-  tableName: 'session',
-  createTableIfMissing: true,
+// const ConnectSession = new Connect(session)
+const sessionStore = new MongoStore({
+    mongoUrl:process.env.MONGO_URI,
+    ttl: 14 * 24 * 60 * 60
+  
 })
 const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
   admin,
