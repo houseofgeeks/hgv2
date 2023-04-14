@@ -7,10 +7,6 @@ const bcrypt = require("bcryptjs");
 const session = require('express-session')
 const Connect = require('connect-mongo')
 require("dotenv").config();
-const DEFAULT_ADMIN = {
-  email: "admin@example.com",
-  password: "password",
-};
 const AnnouncementModel = require("../models/announcement_model");
 const FeedModel = require("../models/feed_model");
 const WingModel = require("../models/wing_model");
