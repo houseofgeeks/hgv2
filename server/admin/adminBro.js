@@ -4,6 +4,9 @@ const AdminJSExpress = require("@adminjs/express");
 const AdminJSMongoose = require("@adminjs/mongoose");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const session = require('express-session')
+const Connect = require('connect-pg-simple')
+require("dotenv").config();
 const DEFAULT_ADMIN = {
   email: "admin@example.com",
   password: "password",
@@ -14,15 +17,15 @@ const WingModel = require("../models/wing_model");
 const LevelModel = require("../models/level_model");
 const TopicModel = require("../models/topic_model");
 const SubtopicModel = require("../models/subtopic_model");
-const AssignmentModel=require('../models/assignment_model')
+const AssignmentModel = require("../models/assignment_model");
 const UserModel = require("../models/user_model");
 
 const authenticate = async (email, password) => {
   const user = await UserModel.findOne({ email });
-  if (user && (await bcrypt.compare(password, user.password))&&user.isAdmin) {
+  if (user && (await bcrypt.compare(password, user.password)) && user.isAdmin) {
     return Promise.resolve(user);
   }
-  console.log(user)
+  console.log(user);
   return Promise.reject(user).catch((err) => {
     console.log(err);
   });
@@ -36,7 +39,15 @@ const admin = new AdminJS({
   },
   rootPath: "/admin",
 });
-
+const ConnectSession = Connect(session)
+const sessionStore = new ConnectSession({
+  conObject: {
+    connectionString:process.env.POSTGRES_URI,
+    ssl: process.env.NODE_ENV === 'production',
+  },
+  tableName: 'session',
+  createTableIfMissing: true,
+})
 const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
   admin,
   // app,
@@ -47,16 +58,18 @@ const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
   },
   null,
   {
-    // store: sessionStore,
+    store: sessionStore,
     resave: true,
-    httpOnly:false,
+    httpOnly: false,
     saveUninitialized: true,
     secret: "sessionsecret",
     // cookie: {
     //   httpOnly: process.env.NODE_ENV === "production",
     //   secure: process.env.NODE_ENV === "production",
     // },
-  },
+  }
+  // app
+
   // preDefinedRouter
 );
 
