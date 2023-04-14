@@ -43,7 +43,7 @@ const ConnectSession = Connect(session)
 const sessionStore = new ConnectSession({
   conObject: {
     connectionString:process.env.POSTGRES_URI,
-    ssl: process.env.NODE_ENV === 'production',
+    ssl: {rejectUnauthorized: false},
   },
   tableName: 'session',
   createTableIfMissing: true,
