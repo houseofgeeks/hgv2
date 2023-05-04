@@ -6,10 +6,7 @@ const WingMember = ({ name, img }) => {
             <img src={img} alt='' className='w-[100px]' />
             <div className='text-xl'>
                 {
-                    name === 'Sudhanshu Mittal' ?
-                        'Chudhanshu Mutthal'
-                        :
-                        name
+                    name
                 }
             </div>
         </div>
