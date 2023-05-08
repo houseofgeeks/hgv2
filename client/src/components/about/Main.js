@@ -12,13 +12,13 @@ const Main = () => {
                 <img src={circle} alt='' className='relative bottom-[1.5rem] left-[1rem]' />
             </div>
             <div className='flex relative items-center justify-center'>
-                <div className='w-[300px] h-[315px] main-bg-1  left-[5rem] relative'>
+                <div className='w-[160px] ss:w-[300px] h-[315px] main-bg-1 left-[5rem] relative'>
                 </div>
-                <div className='main-bg-2 w-[388px] h-[360px]'>
+                <div className='main-bg-2 w-[160px] ss:w-[388px] h-[360px]'>
                 </div>
-                <div className='main-bg-3 w-[320px] h-[300px] relative right-[5rem]'>
+                <div className='main-bg-3 w-[160px] ss:w-[320px] h-[300px] relative right-[5rem]'>
                 </div>
-                <div className='absolute text-8xl font-normal flex flex-col'>
+                <div className='absolute text-6xl ss:text-8xl font-normal flex flex-col'>
                     <div className='main-bg-text relative top-[0.5rem]'>House Of Geeks</div>
                     <div className='main-bg-text-shadow relative bottom-[0.5rem]'>House Of Geeks</div>
                 </div>

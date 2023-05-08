@@ -11,21 +11,27 @@ const Footer = () => {
   return (
     <div className="bg-[#0A0A0B] text-white">
       <div className="xs:flex">
-        <div className="py-16 px-24 w-1/2">
-          <div className="flex flex-col justify-center">
-            <img className="max-w-[120px] pl-2" src={hgLogo} alt="" />
-            <div className="hg text-2xl pt-1">House of Geeks</div>
+        <div className="py-16 px-6 xs:px-12 ss:px-24 xs:w-1/2 flex xs:inline">
+          <div className="flex flex-col justify-center pr-8 xs:px-0">
+            <img
+              className="max-w-[60px] xs:max-w-[120px] pl-2"
+              src={hgLogo}
+              alt=""
+            />
+            <div className="hg text-base xs:text-2xl pt-1 text-center xs:text-left">
+              House of Geeks
+            </div>
           </div>
           <div className="max-w-sm">
-            <div className="mt-8 text-base ">
+            <div className="mt-8  xs:text-base text-xs">
               “It is only when they go wrong that machines remind you how
               powerful they are.”
             </div>
-            <div className="float-right text-sm italic pr-6">
+            <div className="float-right text-xs xs:text-sm italic pr-6">
               -Baba Ranchordas
             </div>
           </div>
-          <div className="flex mt-20 space-x-16">
+          <div className="xs:flex mt-20 space-x-16 hidden">
             <div className="lead">
               <img src={ss} className="max-w-[70px]" alt="" />
               <div className="text-sm pt-1">Shubham Kushwaha</div>
@@ -38,7 +44,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 p-20">
+        <div className="xs:w-1/2 px-12 pb-8 xs:p-20">
           <div className="flex flex-col justify-center space-y-8 lg:w-3/5 w-3/4">
             <div className="bt1 text-center py-2 px-4 rounded-md">
               <Link to="http://iiitranchi.ac.in/" target="_blank">

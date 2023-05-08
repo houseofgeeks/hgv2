@@ -5,6 +5,7 @@ module.exports = {
     extend: {},
     screens: {
       xs: "480px",
+      ss: "700px",
       sm: "780px",
       md: "1024px",
       lg: "1186px",
@@ -13,6 +14,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
+    require("@tailwindcss/line-clamp"),
+    require("daisyui"),
+    require("tailwind-scrollbar-hide"),
   ],
 };

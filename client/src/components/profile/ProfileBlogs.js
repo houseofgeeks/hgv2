@@ -3,6 +3,7 @@ import banner1 from "../../assets/profile/blogBanner1.svg";
 import banner2 from "../../assets/profile/blogBanner2.svg";
 import banner3 from "../../assets/profile/blogBanner3.svg";
 import BlogCard from "./BlogCard";
+
 const ProfileBlogs = () => {
   const blogData = [
     {
@@ -27,7 +28,7 @@ const ProfileBlogs = () => {
   return (
     <div className="bg-[#131414] px-10 py-6 rounded-sm mt-8">
       <h2 className="text-2xl font-bold text-white">Blogs</h2>
-      <div className="mt-6 flex w-[100%] justify-between items-center">
+      <div className="mt-6 flex flex-col ss:flex-row w-full justify-between items-center">
         {blogData.map((item) => {
           return <BlogCard item={item} />;
         })}

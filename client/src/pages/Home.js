@@ -3,8 +3,8 @@ import YourActivity from "../components/home/YourActivity";
 
 const Home = () => {
   return (
-    <div className="px-24 min-h-[100vh] py-5 bg-[#010203]">
-      <div className='flex'>
+    <div className="px-12 ss:px-24 min-h-[100vh] py-5 bg-[#010203]">
+      <div className='xs:flex'>
         <YourActivity />
         <Rightbar />
       </div>
