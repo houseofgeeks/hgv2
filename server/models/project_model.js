@@ -1,23 +1,23 @@
- const mongoose=require("mongoose")
+const mongoose = require("mongoose")
 
 
- const projectSchema=mongoose.Schema({
-    status:{
-        type:String,
-        required:true
+const projectSchema = mongoose.Schema({
+    status: {
+        type: String,
+        required: true
     },
-    leadBy:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'User'
+    leadBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
-    title:{
-        type:String,
-        required:true
+    title: {
+        type: String,
+        required: true
     },
-    wingsInvolved:[
+    wingsInvolved: [
         {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'Wing'
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Wing'
         }
     ],
     peopleInvolved:[
@@ -26,10 +26,14 @@
             ref:'User' 
         }
     ],
-    description:{
-        type:String ,
-        required:true
+    description: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+        required: true,
     }
-},{timestamps:true})
+}, { timestamps: true })
 
-module.exports=mongoose.model("Project",projectSchema);
+module.exports = mongoose.model("Project", projectSchema);
