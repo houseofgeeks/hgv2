@@ -27,9 +27,10 @@ app.use(cors(options));
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit:"50mb"}));
+
+app.use(bodyParser.urlencoded({ extended: true ,limit:"50mb"}));
 app.use(admin.options.rootPath, adminRouter)
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 connectDB();
