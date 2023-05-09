@@ -2,7 +2,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import ellipse from "../../assets/level_ellipse.svg";
 
-const ProjectCard = ({ title, lead, createdAt, wings, image, img }) => {
+const ProjectCard = ({ title, lead, createdAt, wings, status, image, img }) => {
   return (
     <div className="border pb-4 sm:pb-8">
       <img src={image} alt={title} className="w-full" />
@@ -28,7 +28,7 @@ const ProjectCard = ({ title, lead, createdAt, wings, image, img }) => {
             <img
               src={ellipse}
               key={i}
-              className="relative"
+              className="relative z-0"
               style={{ right: `${8 * i}px` }}
               alt="ellipse"
             />

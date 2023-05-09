@@ -6,7 +6,7 @@ import ProfileProjects from '../components/profile/ProfileProjects'
 
 const Profile = () => {
   return (
-    <div className='bg-[#010203] px-24 py-8'>
+    <div className='bg-[#010203] px-12 ss:px-24 py-8'>
         <MainProfile />
         <ContestRating />
         <ProfileProjects />

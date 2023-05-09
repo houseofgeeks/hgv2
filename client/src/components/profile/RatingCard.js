@@ -1,5 +1,5 @@
 import React from "react";
-import { BsArrowRight, BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const RatingCard = ({ item }) => {

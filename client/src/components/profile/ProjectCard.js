@@ -3,14 +3,14 @@ import { BsArrowRight } from "react-icons/bs";
 
 const ProjectCard = ({ item }) => {
   return (
-    <div className="flex mb-8 items-center">
+    <div className="xs:flex mb-8 items-center">
       <img src={item.img} alt="" />
-      <div className="text-white ml-8">
-        <h2 className="font-medium text-2xl">{item.title}</h2>
+      <div className="text-white xs:ml-8">
+        <h2 className="font-medium mt-4 xs:mt-0 text-xl ss:text-2xl">{item.title}</h2>
         <div className="flex items-center my-2">
-          {item.tags.map((tag) => {
+          {item.tags.map((tag, index) => {
             return (
-              <div className="bg-black rounded-md mx-2 text-white px-2 py-1 text-xs text font-light">
+              <div className="bg-black rounded-md mx-2 text-white px-2 py-1 text-xs text font-light" key={index}>
                 {tag}
               </div>
             );

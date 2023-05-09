@@ -20,7 +20,7 @@ const ProfileProjects = () => {
     },
   ];
   return (
-    <div className="bg-[#131414] px-10 py-6 rounded-sm mt-6">
+    <div className="bg-[#131414] px-8 ss:px-10 py-6 rounded-sm mt-6">
       <h2 className="text-2xl font-bold text-white">Projects</h2>
       <div className="mt-6">
         {projectData.map((item) => {

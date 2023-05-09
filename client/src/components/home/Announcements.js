@@ -1,21 +1,20 @@
 import AnnounceSection from "./AnnounceSection";
 
-const Announcements = ({ feed, details }) => {
-
+const Announcements = ({ feeds, details }) => {
   return (
     <div
-      className={`min-h-[400px] ml-10 rounded-lg bg-[#0F1010] p-4 ${
-        feed && "mt-10"
+      className={`xs:min-h-[400px] xs:ml-10 rounded-lg bg-[#0F1010] p-4 ${
+        feeds && "mt-10"
       }`}
     >
-      {feed ? (
+      {feeds ? (
         <h1 className="text-slate-300 text-xl">HG Feed</h1>
       ) : (
         <h1 className="text-slate-300 text-xl">HG Announcements</h1>
       )}
-      {feed ? (
+      {feeds ? (
         <div className="mt-4">
-          {feed.map((items, i) => {
+          {feeds?.map((items, i) => {
             if (i < 5) {
               return <AnnounceSection key={i} feed items={items} />;
             }
@@ -23,7 +22,7 @@ const Announcements = ({ feed, details }) => {
         </div>
       ) : (
         <div className="mt-4">
-          {details.map((items, i) => {
+          {details?.map((items, i) => {
             if (i < 5) {
               return <AnnounceSection key={i} items={items} />;
             }
