@@ -34,10 +34,6 @@ const Rightbar = () => {
     );
   }
 
-  // if (error) {
-  //   return <div>Error: {error}</div>;
-  // }
-
   return (
     <div className="flex-[0.75] mt-8 sm:mt-0">
       <div>
