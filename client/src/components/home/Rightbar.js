@@ -7,14 +7,14 @@ const Rightbar = () => {
 
   const fetchAnnouncements = async () => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URI}/api/announcements/all`
+      `${process.env.REACT_APP_BACKEND_URL}/api/announcements/all`
     );
     setAnnouncements(data);
   };
 
   const fetchFeeds = async () => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URI}/api/feeds/all`
+      `${process.env.REACT_APP_BACKEND_URL}/api/feeds/all`
     );
     setFeeds(data.feeds);
   };

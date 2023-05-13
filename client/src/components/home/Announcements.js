@@ -1,7 +1,6 @@
 import AnnounceSection from "./AnnounceSection";
 
 const Announcements = ({ feed, details }) => {
-
   return (
     <div
       className={`min-h-[400px] ml-10 rounded-lg bg-[#0F1010] p-4 ${
