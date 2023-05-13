@@ -3,6 +3,7 @@ import frame from "../assets/frame.png";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProjectData } from "../redux/features/projectSlice";
+import Loader from "../components/loader/Loader";
 
 const category = ["Ongoing", "Past", "Upcoming"];
 
@@ -63,8 +64,8 @@ const Projects = () => {
 
   const { 
     projectData, 
-    // loading, 
-    // error 
+    loading, 
+    error 
   } = useSelector((state) => state.project);
   const dispatch = useDispatch();
 
@@ -76,7 +77,7 @@ const Projects = () => {
   }, [dispatch, currCategory, projectData]);
 
   // if (loading) {
-  //   return <div>Loading...</div>;
+  //   return <Loader />;
   // }
 
   // if (error) {

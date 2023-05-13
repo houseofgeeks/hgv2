@@ -8,8 +8,11 @@ const WingsBrief = ({ wingsData }) => {
     const [active, setActive]=useState(0);
 
   return (
-    <div className='flex'>
-      <div className='flex flex-col gap-[3rem] text-lg ss:text-2xl border-r-[1px] pr-[3rem] pb-[2rem]'>
+    <div className='flex sm:flex-row flex-col'>
+      {/* ------------------------------------------------------ */}
+      {/* wings list section start */}
+      {/* ------------------------------------------------------ */}
+      <div className='flex sm:flex-col overflow-auto sm:overflow-visible my-2 gap-[3rem] text-lg md:text-2xl sm:border-r-[1px] border-0 pr-[3rem] pb-[2rem]'>
             {
                 wings.map((wing,index)=>
                 <div 
@@ -22,6 +25,13 @@ const WingsBrief = ({ wingsData }) => {
                 )
             }
       </div>
+      {/* ------------------------------------------------------ */}
+      {/* wings list section end */}
+      {/* ------------------------------------------------------ */}
+
+      {/* ------------------------------------------------------ */}
+      {/* wings description section */}
+      {/* ------------------------------------------------------ */}
       <div className=''>
             <WingDesc logo={sd} title={wingsData[active]?.name} desc={wingsData[active]?.description} img={null} head={wingsData[active]?.lead} coordinators={wingsData[active]?.coordinators}  />
       </div>

@@ -16,7 +16,7 @@ const YourActivity = () => {
   }, [dispatch]);
 
   return (
-    <div className="flex-[0.25] text-white bg-[#0F1010] xs:h-[550px] rounded-lg p-4">
+    <div className="flex-[0.25] text-white bg-[#0F1010] xs:h-[550px] rounded-lg p-5">
       <h1 className="text-slate-300 text-base xs:text-xl">Your Activity</h1>
 
       <h2 className="font-bold text-sm xs:text-lg mt-6">Problems Solved</h2>

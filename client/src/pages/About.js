@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchWingsData } from "../redux/features/aboutSlice";
 import Main from "../components/about/Main";
 import WingsBrief from "../components/about/WingsBrief";
+import Loader from "../components/loader/Loader";
 
 const About = () => {
   const { 
     wingsData, 
-    // loading, 
+    loading, 
     // error 
   } = useSelector((state) => state.about);
   const dispatch = useDispatch();
@@ -15,10 +16,11 @@ const About = () => {
   useEffect(() => {
     dispatch(fetchWingsData());
   }, [dispatch]);
+  console.log(loading)
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (loading) {
+    return <Loader />;
+  }
 
   // if (error) {
   //   return <div>Error: {error}</div>;

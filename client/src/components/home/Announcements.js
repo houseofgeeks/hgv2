@@ -3,7 +3,7 @@ import AnnounceSection from "./AnnounceSection";
 const Announcements = ({ feeds, details }) => {
   return (
     <div
-      className={`xs:min-h-[400px] xs:ml-10 rounded-lg bg-[#0F1010] p-4 ${
+      className={`xs:min-h-[400px] sm:ml-10 rounded-lg bg-[#0F1010] p-5 ${
         feeds && "mt-10"
       }`}
     >
