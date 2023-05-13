@@ -24,7 +24,7 @@ const ContestRating = () => {
         },
     ]
   return (
-    <div className='text-white flex justify-between items-center mt-6 '>
+    <div className='text-white flex justify-between items-center mt-6 overflow-scroll scrollbar-hide overflow-y-hidden space-y-4'>
         {
             ratingData.map((item,i)=>{
                 return(

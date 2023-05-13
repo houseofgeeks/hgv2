@@ -5,9 +5,9 @@ import ellipse from '../../assets/level_ellipse.svg';
 
 const LevelCard = ({ element }) => {
     return (
-        <div className='bg-[#131414] flex justify-between items-center px-16 py-5'>
+        <div className='bg-[#131414] flex justify-between items-center px-8 ss:px-16 py-5'>
             <div>
-                <h1 className='text-2xl'>
+                <h1 className='text-lg xs:text-xl ss:text-2xl'>
                     {element.title}
                 </h1>
                 <div className='flex items-center mt-1'>
@@ -29,7 +29,7 @@ const LevelCard = ({ element }) => {
                 </div>
             </div>
             <NavLink to={`/resources/1/tasks`}>
-                <BsChevronRight className='text-[2rem] font-black text-[#EE2A7B] cursor-pointer' />
+                <BsChevronRight className='text-lg ss:text-[2rem] font-black text-[#EE2A7B] cursor-pointer' />
             </NavLink>
         </div>
     )

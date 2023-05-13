@@ -4,12 +4,9 @@ const WingMember = ({ name, img }) => {
     return (
         <div className='flex flex-col gap-[1rem]'>
             <img src={img} alt='' className='w-[100px]' />
-            <div className='text-xl'>
+            <div className='text-lg xs:text-xl'>
                 {
-                    name === 'Sudhanshu Mittal' ?
-                        'Chudhanshu Mutthal'
-                        :
-                        name
+                    name
                 }
             </div>
         </div>

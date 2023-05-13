@@ -3,8 +3,8 @@ import { BsArrowRight } from "react-icons/bs";
 
 const BlogCard = ({ item }) => {
   return (
-    <div className="flex flex-col  items-start">
-      <img className="object-cover" src={item.img} alt="" />
+    <div className="flex flex-col items-start mb-8 ss:mb-0">
+      <img className="h-72 ss:w-11/12 object-cover mx-auto ss:mx-0" src={item.img} alt="" />
       <div className="text-white">
         <h2 className="font-medium mt-4 mb-3 text-2xl">
           {item.title.slice(0, 26)}...

@@ -1,59 +1,60 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchLeetCode, fetchCodeforces } from "../../redux/features/ratingsSlice";
+import { useEffect } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import badge from "../../assets/badge.svg";
 import demo from "../../assets/demo_project.svg";
+
 const YourActivity = () => {
-  const [codeForcesRating, setCodeForcesRating] = useState("");
-  const [leetCodeSolved, setLeetCodeSolved] = useState("");
+  const { leetCodeSolved, codeForcesRating } = useSelector((state) => state.ratings);
+  const dispatch = useDispatch();
 
-  const fetchLeetCode = async () => {
-    const { data } = await axios.get(
-      "https://leetcode-stats-api.herokuapp.com/sudhanshu__mittal"
-    );
-    setLeetCodeSolved(data.totalSolved);
-  };
-
-  const fetchCodeforces = async () => {
-    const { data } = await axios.get(
-      "https://codeforces.com/api/user.info?handles=sudhanshu._mittal"
-    );
-    setCodeForcesRating(data.result[0].rating);
-  };
   useEffect(() => {
-    fetchLeetCode();
-    fetchCodeforces();
-  }, []);
+    dispatch(fetchLeetCode());
+    dispatch(fetchCodeforces());
+  }, [dispatch]);
 
   return (
-    <div className="flex-[0.25] text-white bg-[#0F1010] h-[550px] rounded-lg p-4">
-      <h1 className="text-slate-300 text-xl">Your Activity</h1>
+    <div className="flex-[0.25] text-white bg-[#0F1010] xs:h-[550px] rounded-lg p-5">
+      <h1 className="text-slate-300 text-base xs:text-xl">Your Activity</h1>
 
-      <h2 className="font-bold text-lg mt-6">Problems Solved</h2>
+      <h2 className="font-bold text-sm xs:text-lg mt-6">Problems Solved</h2>
       <div className="flex justify-around mt-4">
-        <div className="bg-[#0A0A0B] w-[100px] h-[100px] rounded-lg flex justify-center items-center flex-col">
-          <p className="text-4xl text-[#3466F6]">{leetCodeSolved}</p>
-          <Link to={"/"} className="underline flex items-center underline-offset-2">
-            <p>Leetcode</p> <BsArrowUpRight  className="text-[12px]"/>
+        <div className="bg-[#0A0A0B] w-24 h-24 xs:w-[100px] xs:h-[100px] rounded-lg flex justify-center items-center flex-col">
+          <p className="text-2xl xs:text-4xl text-[#3466F6]">
+            {leetCodeSolved}
+          </p>
+          <Link
+            to={"/"}
+            className="underline flex items-center underline-offset-2"
+          >
+            <p className="text-sm">Leetcode</p>{" "}
+            <BsArrowUpRight className="text-xs" />
           </Link>
         </div>
-        <div className="bg-[#0A0A0B] w-[100px] h-[100px] rounded-lg flex justify-center items-center flex-col">
-          <p className="text-4xl text-[#3466F6]">{codeForcesRating}</p>
-          <Link to={"/"} className="underline flex items-center underline-offset-2">
-            <p>CodeForces</p> <BsArrowUpRight className="text-[12px]" />
+        <div className="bg-[#0A0A0B] w-24 h-24 xs:w-[100px] xs:h-[100px] rounded-lg flex justify-center items-center flex-col">
+          <p className="text-2xl xs:text-4xl text-[#3466F6]">
+            {codeForcesRating}
+          </p>
+          <Link
+            to={"/"}
+            className="underline flex items-center underline-offset-2"
+          >
+            <p className="text-sm">CodeForces</p>{" "}
+            <BsArrowUpRight className="text-xs" />
           </Link>
         </div>
       </div>
 
-      <h2 className="font-bold text-lg mt-8">Skill Badge</h2>
+      <h2 className="font-bold text-sm xs:text-lg mt-8">Skill Badge</h2>
       <div className="flex justify-around mt-2">
         {[1, 2, 3].map((items) => {
-          return <img src={badge} alt="" />;
+          return <img src={badge} key={items} alt="" />;
         })}
       </div>
-      <h2 className="font-bold text-lg mt-8">Projects</h2>
-      <div className="mt-2 flex items-center">
+      <h2 className="font-bold text-sm xs:text-lg mt-8">Projects</h2>
+      <div className="xs:mt-2 mt-4 flex items-center">
         <img src={demo} alt="" />
         <div className="ml-4">
           <p>Load balancer</p>

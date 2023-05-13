@@ -10,15 +10,15 @@ const LevelTrack = ({ index,title,items}) => {
   return (
     <>
     <div className="pt-[10px]">
-      <div className="bg-[#131414] py-[20px] px-[50px] flex justify-between item-center cursor-pointer" onClick={()=>{setOpen(!open)}}>
-        <p className="text-[22px] font-semibold">{title}</p>
-        <div className="text-[30px] bg-[#010203]">
+      <div className="bg-[#131414] xs:py-[20px] xs:px-[50px] px-4 py-2 flex justify-between item-center cursor-pointer" onClick={()=>{setOpen(!open)}}>
+        <p className="xs:text-[22px] text-base font-semibold">{title}</p>
+        <div className="xs:text-[30px] text-base">
           {!open ? <IoIosArrowUp/> : <IoIosArrowDown/>}
         </div>
       </div>
 
       <Collapse isOpened={!open}>
-        <div className="bg-[#131414] px-[50px] pb-[20px]"><LevelTrackItems items={items} /></div>
+        <div className="bg-[#131414] xs:px-[50px] px-8 pb-[20px]"><LevelTrackItems items={items} /></div>
       </Collapse>
     </div>
         

@@ -1,11 +1,12 @@
 import { GoArrowUp } from "react-icons/go";
+
 const AnnounceSection = ({ feed,items }) => {
   return (
     <div className="flex items-center my-4">
-      <div className="w-9 h-9 rounded-full relative bg-slate-100">
+      <div className="w-12 h-9 rounded-full relative bg-slate-100 -z-0">
         <img src={items.user.image} className='w-full h-full object-cover rounded-full' alt="" />
       </div>
-      <div className="w-[100%] ml-5">
+      <div className="w-[100%] ml-5 text-xs xs:text-base">
         {
           feed ? <p className=" text-slate-100">
           {items.feedDetails}
