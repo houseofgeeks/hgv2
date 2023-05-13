@@ -2,12 +2,13 @@ import Announcements from "./Announcements";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAnnouncements, fetchFeeds } from "../../redux/features/homeSlice";
+import Loader from "../loader/Loader";
 
 const Rightbar = () => {
   const { 
     announcements, 
     feeds, 
-    // loading, 
+    loading, 
     // error 
   } = useSelector((state) => state.home);
   const dispatch = useDispatch();
@@ -17,8 +18,8 @@ const Rightbar = () => {
     dispatch(fetchFeeds());
   }, [dispatch]);
 
-  // if (loading) {
-  //   return (
+  if (loading) {
+    return (
       // <div class="w-60 h-24 border-2 rounded-md mx-auto mt-20">
       //   <div class="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
       //     <div class="w-12 bg-gray-300 h-12 rounded-full "></div>
@@ -28,16 +29,17 @@ const Rightbar = () => {
       //     </div>
       //   </div>
       // </div>
-  //     <div>Loading...</div>
-  //   );
-  // }
+      // <div>Loading...</div>
+      <Loader />
+    );
+  }
 
   // if (error) {
   //   return <div>Error: {error}</div>;
   // }
 
   return (
-    <div className="flex-[0.75] mt-8 xs:mt-0">
+    <div className="flex-[0.75] mt-8 sm:mt-0">
       <div>
         <Announcements details={announcements} />
         <Announcements feeds={feeds.feeds} />

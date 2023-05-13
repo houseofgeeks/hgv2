@@ -1,25 +1,29 @@
+.aboutMainBg {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
+}
+
 .main-bg-1 {
     background-image: linear-gradient(114.77deg, #1FCFF1 3.4%, #193783 100%);
     opacity: 0.28;
     filter: blur(50px);
-    border-radius: 50%;
+    border-radius: 40%;
 }
 
 .main-bg-2 {
     background: linear-gradient(114.77deg, #19FB9B 3.4%, #08716A 100%);
     opacity: 0.18;
     filter: blur(50px);
-    border-radius: 50%;
+    border-radius: 40%;
 }
 
 .main-bg-3 {
     background: linear-gradient(114.77deg, #EF86FF 3.4%, #5919A7 100%);
     opacity: 0.18;
     filter: blur(50px);
-    border-radius: 50%;
+    border-radius: 40%;
 }
 
-.main-bg-text{
+.main-bg-text {
     font-family: 'Gayathri';
 }
 
@@ -31,4 +35,10 @@
     background-clip: text;
     transform: matrix(1, 0, 0, -1, 0, 0);
     text-fill-color: transparent;
+}
+
+@media screen and (max-width: 780px) {
+    .aboutMainBg {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }

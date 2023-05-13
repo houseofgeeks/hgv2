@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchWingsData } from "../redux/features/aboutSlice";
 import frame from "../assets/frame.png";
 import WingCard from "../components/resources/WingCard";
+import Loader from "../components/loader/Loader";
 
 // const WingData = [
 //   {
@@ -46,7 +47,7 @@ import WingCard from "../components/resources/WingCard";
 const Resources = () => {
   const { 
     wingsData, 
-    // loading, 
+    loading, 
     // error 
   } = useSelector((state) => state.about);
   const dispatch = useDispatch();
@@ -55,9 +56,9 @@ const Resources = () => {
     dispatch(fetchWingsData());
   }, [dispatch]);
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (loading) {
+    return <Loader />
+  }
 
   // if (error) {
   //   return <div>Error: {error}</div>;
