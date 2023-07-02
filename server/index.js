@@ -18,7 +18,7 @@ const { connectDB } = require("./database/database");
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const options = {
-  origin: ["*","http://localhost:3000", "https://hgv2.vercel.app"],
+  origin: ["*","http://localhost:3000", "https://hgv2.vercel.app","https://hgv2-admin.vercel.app/dashboard"],
   useSuccessStatus: 200,
 };
 dotenv.config();
