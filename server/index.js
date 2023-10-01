@@ -16,13 +16,17 @@ const projectRoutes=require("./routes/project_routes");
 const { connectDB } = require("./database/database");
 const bodyParser = require('body-parser');
 const cors = require("cors");
-const options = {
-  origin: ["*","http://localhost:3000", "https://hgv2.vercel.app","https://hgv2-admin.vercel.app"],
-  useSuccessStatus: 200,
-};
+// const options = {
+//   origin: ["*","http://localhost:3000", "https://hgv2.vercel.app","https://hgv2-admin.vercel.app"],
+//   useSuccessStatus: 200,
+// };
 dotenv.config();
-app.use(cors(options)); 
-
+// app.use(cors(options)); 
+app.use(
+  cors({
+      origin: '*'
+  })
+);
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
