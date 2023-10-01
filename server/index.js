@@ -3,8 +3,7 @@ const app = express();
 module.exports = app;
 // const app = express(); 
 const PORT = 8000;
-const {admin}=require('./admin/adminBro')
-const {adminRouter}=require('./admin/adminBro')
+
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/user_routes");
 const announcementRoutes = require("./routes/announcement_routes");
@@ -30,7 +29,6 @@ app.listen(process.env.PORT || PORT, () => {
 app.use(bodyParser.json({limit:"50mb"}));
 
 app.use(bodyParser.urlencoded({ extended: true ,limit:"50mb"}));
-app.use(admin.options.rootPath, adminRouter)
 app.use(express.json());
 
 connectDB();
