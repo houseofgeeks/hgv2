@@ -41,3 +41,8 @@ app.use("/api/announcements", announcementRoutes);
 app.use("/api/topics",topicRoutes);
 app.use('/api/subtopics',subtopicRoutes);
 app.use('/api/projects',projectRoutes);
+
+
+app.get("/",(req,res)=>{
+  res.status(200).json({message:"HGV2 Backend server live and running"});
+})
