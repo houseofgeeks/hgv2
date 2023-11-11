@@ -1,6 +1,6 @@
 const Assignment = require("../models/assignment_model");
 const Level = require("../models/level_model");
-
+const asyncHandler=require("express-async-handler");
 const create = async (req, res) => {
     try {
         const newAssignment = await Assignment.create({
@@ -62,6 +62,15 @@ const verifyAssignment = async (req, res) => {
         });
     }
 };
+
+//get assignment by level id 
+// const getAssignmentbyLevelId=asyncHandler(async(req,res)=>{
+//     const {levelId}=req.params;
+//     if(levelId==":levelId"){
+//         return res.status(401).json({message:"Cannot find the assignment without the level id"});
+//     }
+//     //doubt here
+// })
 
 module.exports = {
     create,
