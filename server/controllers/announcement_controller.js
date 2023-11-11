@@ -5,10 +5,10 @@ const User = require("../models/user_model");
 
 // Creating an announcement
 const createAnnouncement = asyncHandler(async (req, res) => {
-  const { announcementDetails } = req.body;
+  const { announcementDetails, tags } = req.body;
   const user = req.user._id;
   console.log(user);
-  if (!announcementDetails) {
+  if (!announcementDetails || !tags) {
     res.status(400).json({ message: "Please fill all the fields" });
   }
   const newAnnouncement = new Announcement({
@@ -24,6 +24,7 @@ const createAnnouncement = asyncHandler(async (req, res) => {
       createdAt: newAnnouncement.createdAt,
       userName: user.name,
       userImage: user.image,
+      tags: tags
     });
   } else {
     res.status(400).json({ message: "Invalid Announcement data" });
@@ -48,8 +49,13 @@ const updateAnnouncement = asyncHandler(async (req, res) => {
 
 // get all announcements
 const getAllAnnouncements = asyncHandler(async (req, res) => {
+  const { tag } = req.query;
+  const queryObj = {query:{}};
+  if (tag) {
+    queryObj.query = { $in: { tags: tag } }
+  }
   try {
-    const announcements = await Announcement.find({}).populate("user");
+    const announcements = await Announcement.find(queryObj.query).populate("user");
     res.status(200).json(announcements);
   } catch (err) {
     res.status(400).json({ message: "Error in getting announcement" + err });
@@ -74,5 +80,5 @@ module.exports = {
   createAnnouncement,
   getAllAnnouncements,
   updateAnnouncement,
-  deleteAnnouncement,
+  deleteAnnouncement
 };

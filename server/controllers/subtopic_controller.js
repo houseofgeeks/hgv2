@@ -30,4 +30,23 @@ const addResource=asyncHandler(async(req,res)=>{
         res.status(400).json({message:"Invalid Resource data"})
     }
 })
-module.exports = { createSubtopic,addResource };
+
+//get subtopic by topic id
+const getSubtopics=asyncHandler(async(req,res)=>{
+    const topicId=req.params.topicId;
+    if(topicId==":topicId"){
+      return res.status(401).json({message:"Invalid input data"});
+    }
+    const findTopic=await Topic.findById({_id:topicId});
+    if(!findTopic){
+      return res.status(404).json({message:"Not found error"});
+    }
+    const findSubtopics=await Subtopic.find({$in:{_id:findTopic.subtopics}}).populate("completedBy");
+    if(!findSubtopics){
+      return res.json(400).json({message:"INTERNAL SERVER ERROR"});
+    }
+    return res.json(200).json(findSubtopics);
+
+})
+
+module.exports = { createSubtopic,addResource ,getSubtopics};

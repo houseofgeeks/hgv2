@@ -19,6 +19,10 @@ const feedSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    //tags ka array
+    tags: [{
+      type: String
+    }]
   },
   {
     timestamps: true,

@@ -4,16 +4,17 @@ const User = require("../models/user_model");
 
 // create feed
 const createFeed = asyncHandler(async (req, res) => {
-  const { feedDetails } = req.body;
+  const { feedDetails, tags } = req.body;
   const user = req.user._id;
 
-  if (!feedDetails) {
+  if (!feedDetails || !tags) {
     res.status(400).json({ message: "Please fill all the fields" });
   }
 
   const newFeed = new Feed({
     feedDetails: feedDetails,
     user,
+    tags: tags
   });
 
   const result = await newFeed.save();
@@ -54,7 +55,12 @@ const deleteFeed = asyncHandler(async (req, res) => {
 // get all feeds
 const getAllFeeds = asyncHandler(async (req, res) => {
   try {
-    const feeds = await Feed.find().populate("user");
+    const { tag } = req.query;
+    const queryObj = { query: {} };
+    if (tag) {
+      queryObj.query = { $in: { tags: tag } }
+    }
+    const feeds = await Feed.find(queryObj.query).populate("user");
     res.status(200).json({ msg: "all feeds are", feeds });
   } catch (err) {
     res.status(500).json(err);
