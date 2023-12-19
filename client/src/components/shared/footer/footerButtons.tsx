@@ -1,12 +1,12 @@
 import React from 'react'
-import { footerButtons } from "../../../utils/data";
+import { footerButtons } from "@/utils";
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 const FooterButtons = () => {
   return (
-    <div className="hidden md:flex flex-col space-y-8 sm:w-3/4 mx-auto">
+    <div className="hidden md:flex flex-col space-y-8 mx-auto">
       {footerButtons.map((button, index) => (
         <div
           key={index}

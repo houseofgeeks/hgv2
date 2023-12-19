@@ -64,7 +64,7 @@ const Navbar = () => {
             />
           </div>
           <div className="flex flex-col pt-1">
-            <div className="text-sm">Shudhanshu Mittal</div>
+            <div className="text-sm">Naam hai Kuch</div>
             <Link
               href={"/profile"}
               className="text-xs font-extralight text-primary-color flex items-center"
