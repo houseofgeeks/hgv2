@@ -7,12 +7,8 @@ import Link from 'next/link';
 import { FiArrowUpRight } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 
-
-
 const Navbar = () => {
-
     const [isOpen, setIsOpen] = useState<boolean>(false);
-
     const handleToggleMenu = () => {
         setIsOpen(!isOpen);
     }

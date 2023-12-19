@@ -1,11 +1,15 @@
-import React from 'react'
+import YourActivity from "../../components/home/YourActivity";
+import Rightbar from "../../components/home/Rightbar";
 
-const page = () => {
+const Home = () => {
   return (
-    <div>
-      Home page
+    <div className="px-12 ss:px-24 min-h-[100vh] py-5 bg-[#010203]">
+      <div className="flex sm:flex-row flex-col">
+        <YourActivity />
+        <Rightbar />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Home;
