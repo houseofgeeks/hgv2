@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/shared/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 // to use google imported fonts, we need to add the following to the html
@@ -35,7 +35,9 @@ export default function RootLayout({
           <div className="">
             <Navbar />
           </div>
-          {children}
+          <div className="flex-1">
+            {children}
+          </div>
           <Footer />
         </main>
       </body>
