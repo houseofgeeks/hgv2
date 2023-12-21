@@ -19,7 +19,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-primary-navBg lg:px-4 px-3 h-16 flex items-center relative">
+    <div className="bg-primary-navBg sm:px-8 lg:px-16 px-2 h-16 flex items-center relative">
       <header className="container mx-auto flex justify-between items-center">
 
         {/* logo section  */}
@@ -66,7 +66,7 @@ const Navbar = () => {
             />
           </div>
           <div className="flex flex-col pt-1">
-            <div className="text-lg font-medium">Sudhanshu Mittal</div>
+            <div className="text-lg font-medium">Mittal Sudhanshu</div>
             <Link
               href={"/profile"}
               className="text-sm font-extralight text-primary-color flex items-center"
