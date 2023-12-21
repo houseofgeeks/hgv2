@@ -44,7 +44,7 @@ const page = () => {
 
   return (
     <div className="px-6 flex flex-col gap-8 py-6 container mx-auto">
-      <h1 className="font-semibold text-2xl">
+      <h1 className="font-semibold md:text-lg lg:text-xl sm:text-base text-sm">
         Resources
       </h1>
 
