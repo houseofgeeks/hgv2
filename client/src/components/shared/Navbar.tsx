@@ -19,7 +19,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-primary-navBg lg:px-4 px-3 h-16 flex items-center relative shadow">
+    <div className="bg-primary-navBg lg:px-4 px-3 h-16 flex items-center fixed z-10 top-0 inset-x-0">
       <header className="container mx-auto flex justify-between items-center">
 
         {/* logo section  */}
@@ -53,7 +53,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      <div className={`py-6 px-4 sm:hidden flex ${isOpen ? "translate-y-0" : "translate-y-full"} transition-all duration-200 ease-in top-[4rem] flex-col gap-4 fixed z-10 bottom-0 inset-x-0 bg-[#0e0e0f] text-white`}>
+      <div className={`py-6 px-4 sm:hidden flex ${isOpen ? "translate-y-0" : "translate-y-full"} transition-all duration-200 ease-in top-[4rem] flex-col gap-4 fixed z-20 bottom-0 inset-x-0 bg-[#0e0e0f] text-white`}>
 
         {/* profile section  */}
         <div className="px-4 py-2 flex items-center gap-4">

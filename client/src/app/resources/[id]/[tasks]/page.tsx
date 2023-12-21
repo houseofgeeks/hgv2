@@ -1,31 +1,59 @@
 import LevelCard from '@/components/cards/LevelCard';
+import TaskCard from '@/components/cards/TaskCard';
 import Link from 'next/link'
 import React from 'react'
 
-const levels = [
+const tasks = [
   {
-    title: "Level1 | Introduction to Frontend Development",
-    img: [1, 2, 3, 4],
-    img_count: 84,
+    title: "HTML",
+    subtitles: [
+      {
+        title: 'Basic Syntax',
+      },
+      {
+        title: 'Hyperlinks & Images',
+      },
+      {
+        title: 'Forum Input',
+      },
+    ],
     id: '1'
   },
   {
-    title: "Level2 | Introduction to Backend Development",
-    img: [1, 2, 3, 4],
-    img_count: 50,
+    title: "CSS",
+    subtitles: [
+      {
+        title: 'Basic Syntax',
+      },
+      {
+        title: 'Hyperlinks & Images',
+      },
+      {
+        title: 'Forum Input',
+      },
+    ],
     id: '2'
   },
   {
-    title: "Level3 | Devops",
-    img: [1, 2, 3, 4],
-    img_count: 16,
+    title: "React Js | Javascript Framework",
+    subtitles: [
+      {
+        title: 'Basic Syntax',
+      },
+      {
+        title: 'Hyperlinks & Images',
+      },
+      {
+        title: 'Forum Input',
+      },
+    ],
     id: '3'
   },
 ];
 
 const page = ({ params }: { params: { tasks: string } }) => {
   return (
-    <div className="px-6 flex flex-col gap-8 py-6 container mx-auto">
+    <div className="px-6 flex flex-col gap-8 py-6 pb-10 container mx-auto">
       <h1 className="font-base md:text-lg lg:text-xl sm:text-base text-sm flex items-center gap-1">
         <Link
           href={'/resources'}
@@ -53,17 +81,16 @@ const page = ({ params }: { params: { tasks: string } }) => {
       </h1>
 
       <section className="flex flex-col gap-6">
-        {/* {
-          levels.map((item) => (
-            // <LevelCard
-            //   key={item.id}
-            //   title={item.title}
-            //   count={item.img_count}
-            //   levelId={item.id}
-            //   resourceId={params.id}
-            // />
+        {
+          tasks.map((item) => (
+            <TaskCard
+              key={item.id}
+              title={item.title}
+              subtitles={item.subtitles}
+              id={item.id}
+            />
           ))
-        } */}
+        }
       </section>
     </div>
   )

@@ -32,7 +32,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <main className="min-h-screen flex flex-col text-white bg-primary-bg">
-          <div className="">
+          <div className="h-16">
             <Navbar />
           </div>
           <div className="flex-1">

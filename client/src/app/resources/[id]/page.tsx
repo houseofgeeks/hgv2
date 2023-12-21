@@ -25,7 +25,7 @@ const levels = [
 
 const page = ({ params }: { params: { id: string } }) => {
   return (
-    <div className="px-6 flex flex-col gap-8 py-6 container mx-auto">
+    <div className="px-6 flex flex-col gap-8 py-6 pb-10 container mx-auto">
       <h1 className="font-base md:text-lg lg:text-xl sm:text-base text-sm flex items-center gap-1">
       <Link
           href={'/resources'}
