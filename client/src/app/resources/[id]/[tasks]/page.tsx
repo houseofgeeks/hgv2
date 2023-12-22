@@ -1,3 +1,4 @@
+import AssignmentCard from '@/components/cards/AssignmentCard';
 import LevelCard from '@/components/cards/LevelCard';
 import TaskCard from '@/components/cards/TaskCard';
 import Link from 'next/link'
@@ -91,6 +92,25 @@ const page = ({ params }: { params: { tasks: string } }) => {
             />
           ))
         }
+      </section>
+
+      {/* assignment section  */}
+
+      <section className='flex flex-col gap-6'>
+        <h1 className='text-lg md:text-xl lg:text-2xl font-medium'>
+          Assignments
+        </h1>
+
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7'>
+          {
+            [1, 2, 3, 4, 5].map((item, index) => (
+              <AssignmentCard
+                key={'assignment' + index}
+                isSubmitted={item % 3 === 0 ? 'NOT_SUBMITTED' : item % 3 === 1 ? 'SUBMITTED' : 'VERIFIED'}
+              />
+            ))
+          }
+        </div>
       </section>
     </div>
   )
