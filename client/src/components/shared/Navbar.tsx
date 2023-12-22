@@ -66,7 +66,7 @@ const Navbar = () => {
             />
           </div>
           <div className="flex flex-col pt-1">
-            <div className="text-lg font-medium">Sudhanshu Mittal</div>
+            <div className="text-lg font-medium">Mittal Sudhanshu</div>
             <Link
               href={"/profile"}
               className="text-sm font-extralight text-primary-color flex items-center"

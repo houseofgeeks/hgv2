@@ -1,8 +1,9 @@
 'use client'
+
 import frame from "@/../public/frame.png";
 import { useState} from "react";
-import ProjectCard from "@/components/cards/ProjectCard";
 import { ProjectsData } from "@/utils";
+import ProjectCard from "@/components/cards/ProjectCard";
 
 const category = ["Ongoing", "Past", "Upcoming"];
 

@@ -15,7 +15,7 @@ const LevelCard = ({ levelId, title, count, resourceId }: Props) => {
     return (
         <Link href={`/resources/${resourceId}/${levelId}`} className='bg-secondary-bg hover:shadow-lg group items-center p-4 px-6 rounded-md gap-4 shadow flex flex-row justify-between'>
 
-            <div className='flex flex-col gap-2 flex-1 max-w-[80%] text-ellipsis'>
+            <div className='flex flex-col gap-2 flex-1 text-ellipsis overflow-hidden'>
                 <h1 className='md:text-2xl group-hover:text-primary-color sm:text-lg text-base overflow-hidden font-medium md:font-semibold text-ellipsis whitespace-nowrap'>
                     {title}
                 </h1>
