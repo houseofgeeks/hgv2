@@ -7,15 +7,15 @@ import dp from "@/../public/profile/dp.jpeg"
 
 const MainProfile = () => {
   return (
-    <div className="relative bg-secondary-bg px-4 xs:px-6 sm:px-10 py-6 rounded-md shadow-lg grid grid-cols-6 space-y-6 ss:space-y-0 ss:grid-cols-8 md:grid-cols-9 -z-0">
-      <div className="h-full col-span-2 self-center sm:mr-8">
+    <div className="bg-secondary-bg px-4 xs:px-6 sm:px-10 py-6 rounded-md shadow-lg grid grid-cols-4 ss:gap-4 md:gap-0 space-y-6 ss:space-y-0 ss:grid-cols-11 md:grid-cols-12">
+      <div className="h-full col-span-2 self-center">
         <Image
           src={dp}
           alt=""
-          className="ss:w-[120px] ss:h-[120px] xs:w-[100px] xs:h-[100px] w-[80px] h-[80px] mx-auto xs:mx-0 object-cover rounded-full"
+          className="lg:w-[140px] lg:h-[140px] ss:w-[120px] ss:h-[120px] xs:w-[100px] xs:h-[100px] w-[80px] h-[80px] mx-auto xs:mx-0 object-cover rounded-full"
         />
       </div>
-      <div className="col-span-6 w-full">
+      <div className="col-span-9 w-full">
         <div className="flex items-center">
           <h2 className="font-bold text-lg xs:text-xl ss:text-2xl">Mittal Sudhanshu</h2>
           <p className="mt-2 ml-4 text-gray-400 text-xs xs:text-sm ss:text-base">
