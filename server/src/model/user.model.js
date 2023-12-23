@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const userSchema = mongoose.Schema(
+const bcrypt = require("bcryptjs");
+const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -43,21 +44,29 @@ const userSchema = mongoose.Schema(
     },
     image: {
       type: String,
-      required: true,
-    },
-    isAdmin: {
-      type: Boolean,
       // required: true,
-      default: false,
     },
-    projectsInvolved:[
+    userType: {
+      enum: ["member", "lead", "coordinator"],
+      type: String,
+    },
+    projectsInvolved: [
       {
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Project'
-      }
-    ]
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Project",
+      },
+    ],
   },
   { timestamps: true }
 );
+
+userSchema.pre("save", function process() {
+  const password = this.password;
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(password, salt);
+
+  this.password = hash;
+});
+
 const User = mongoose.model("User", userSchema);
 module.exports = User;
