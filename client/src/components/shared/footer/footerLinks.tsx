@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { footer } from "@/utils";
-import Link from 'next/link';
-import { FiArrowUpRight } from 'react-icons/fi';
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const FooterLinks = () => {
   return (
@@ -28,6 +28,6 @@ const FooterLinks = () => {
       ))}
     </div>
   );
-}
+};
 
-export default FooterLinks
+export default FooterLinks;

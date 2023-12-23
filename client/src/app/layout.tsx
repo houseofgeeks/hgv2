@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Source_Sans_3({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "House of Geeks, IIIT Ranchi",
-  description: "Official Website of House of Geeks, Technical Society of IIIT Ranchi",
+  description:
+    "Official Website of House of Geeks, Technical Society of IIIT Ranchi",
 };
 
 export default function RootLayout({
@@ -23,9 +24,7 @@ export default function RootLayout({
           <div className="h-16">
             <Navbar />
           </div>
-          <div className="flex-1 sm:px-8 lg:px-14">
-            {children}
-          </div>
+          <div className="flex-1 sm:px-8 lg:px-14">{children}</div>
           <Footer />
         </main>
       </body>

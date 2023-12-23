@@ -16,12 +16,11 @@ const Navbar = () => {
 
   const handleCloseMenu = () => {
     setIsOpen(false);
-  }
+  };
 
   return (
-    <div className="bg-primary-navBg lg:px-4 px-3 h-16 flex items-center fixed z-10 top-0 inset-x-0">
+    <div className="bg-secondary-bg lg:px-4 px-3 h-16 flex items-center fixed z-10 top-0 inset-x-0">
       <header className="container mx-auto flex justify-between items-center">
-
         {/* logo section  */}
         <div className="text-white w-20 h-10 relative">
           <Image src={"/logo.svg"} fill alt="house of geeks logo" />
@@ -33,7 +32,7 @@ const Navbar = () => {
         </div>
 
         {/* profile menu section */}
-        <Link href={'/profile'} className="hidden sm:flex items-center gap-2">
+        <Link href={"/profile"} className="hidden sm:flex items-center gap-2">
           <div className="relative w-8 h-8">
             <Image
               src={"/profile-demo.svg"}
@@ -53,8 +52,11 @@ const Navbar = () => {
         </div>
       </header>
 
-      <div className={`py-6 px-4 sm:hidden flex ${isOpen ? "translate-y-0" : "translate-y-full"} transition-all duration-200 ease-in top-[4rem] flex-col gap-4 fixed z-20 bottom-0 inset-x-0 bg-[#0e0e0f] text-white`}>
-
+      <div
+        className={`py-6 px-4 sm:hidden flex ${
+          isOpen ? "translate-y-0" : "translate-y-full"
+        } transition-all duration-200 ease-in top-[4rem] flex-col gap-4 fixed z-20 bottom-0 inset-x-0 bg-[#0e0e0f] text-white`}
+      >
         {/* profile section  */}
         <div className="px-4 py-2 flex items-center gap-4">
           <div className="relative w-12 h-12">
@@ -82,9 +84,7 @@ const Navbar = () => {
         <div className="flex flex-col gap-0.5 items-center text-xl">
           <NavItems handleClose={handleCloseMenu} />
         </div>
-
       </div>
-
     </div>
   );
 };

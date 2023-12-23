@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -17,7 +17,7 @@ const config: Config = {
         primary: {
           bg: "black",
           color: "#EE2A7B",
-          navBg: "#131414",
+          navBg: "#010203",
         },
         secondary: {
           bg: "#131414",
@@ -27,7 +27,14 @@ const config: Config = {
         },
       },
     },
+    screens: {
+      xs: "480px",
+      ss: "700px",
+      sm: "780px",
+      md: "1024px",
+      lg: "1186px",
+    },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
-export default config
+export default config;

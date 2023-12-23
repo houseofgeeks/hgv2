@@ -3,10 +3,10 @@ import React from "react";
 import NavItem from "./NavItem";
 
 interface Props {
-  handleClose?: () => void
+  handleClose?: () => void;
 }
 
-const NavItems = ({ handleClose = () => { } }:Props) => {
+const NavItems = ({ handleClose = () => {} }: Props) => {
   return (
     <>
       {navItems.map((navItem) => (

@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import hgLogo from "../../../../public/hg_logo.svg";
+import Image from "next/image";
+import hgLogo from "@/../public/hg_logo.svg";
 
 const FooterHeroSection = () => {
   return (
@@ -25,6 +25,6 @@ const FooterHeroSection = () => {
       </div>
     </div>
   );
-}
+};
 
-export default FooterHeroSection
+export default FooterHeroSection;
