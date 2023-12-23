@@ -1,8 +1,8 @@
-'use client'
-import ProjectCard from "../../components/cards/ProjectCard";
+"use client";
 import frame from "@/../public/frame.png";
-import { useState} from "react";
+import { useState } from "react";
 import { ProjectsData } from "@/utils";
+import ProjectCard from "@/components/cards/ProjectCard";
 
 const category = ["Ongoing", "Past", "Upcoming"];
 
@@ -10,7 +10,7 @@ const Page = () => {
   const [currCategory, setCurrCategory] = useState(0);
 
   return (
-    <div className="px-6 flex flex-col gap-8 py-6 container mx-auto">
+    <div className="flex flex-col gap-8 py-6 container mx-auto">
       <h1 className="font-semibold text-xl sm:text-2xl">Projects</h1>
       <div className="flex items-center gap-12">
         {category.map((item, index) => (

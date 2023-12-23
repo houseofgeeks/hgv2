@@ -2,7 +2,6 @@ import BlogCard from "./BlogCard";
 import { blogData } from "@/utils";
 
 const ProfileBlogs = () => {
-  
   return (
     <div className="bg-secondary-bg space-y-6 px-10 py-6 rounded-md shadow-lg">
       <h2 className="text-2xl font-bold">Blogs</h2>

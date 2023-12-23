@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import { footerButtons } from "@/utils";
-import Link from 'next/link';
-import Image from 'next/image';
-import { FiArrowUpRight } from 'react-icons/fi';
+import Link from "next/link";
+import Image from "next/image";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const FooterButtons = () => {
   return (
@@ -25,6 +25,6 @@ const FooterButtons = () => {
       ))}
     </div>
   );
-}
+};
 
-export default FooterButtons
+export default FooterButtons;

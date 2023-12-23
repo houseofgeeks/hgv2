@@ -1,5 +1,5 @@
-import YourActivity from "../../components/home/YourActivity";
-import Rightbar from "../../components/home/Rightbar";
+import YourActivity from "@/components/home/YourActivity";
+import Rightbar from "@/components/home/Rightbar";
 
 const Home = () => {
   return (

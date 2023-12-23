@@ -3,7 +3,7 @@ import React from "react";
 import { BsTwitter } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
-import dp from "@/../public/profile/dp.jpeg"
+import dp from "@/../public/profile/dp.jpeg";
 
 const MainProfile = () => {
   return (
@@ -17,7 +17,9 @@ const MainProfile = () => {
       </div>
       <div className="col-span-9 w-full">
         <div className="flex items-center">
-          <h2 className="font-bold text-lg xs:text-xl ss:text-2xl">Mittal Sudhanshu</h2>
+          <h2 className="font-bold text-lg xs:text-xl ss:text-2xl">
+            Mittal Sudhanshu
+          </h2>
           <p className="mt-2 ml-4 text-gray-400 text-xs xs:text-sm ss:text-base">
             2021UG4004
           </p>

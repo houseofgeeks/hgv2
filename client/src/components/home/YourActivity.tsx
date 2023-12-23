@@ -35,11 +35,7 @@ const YourActivity = () => {
         {[1, 2, 3].map((items, index) => {
           return (
             <div key={index} className="relative w-24 h-24">
-              <Image
-                fill
-                src="/assets/badge.svg"
-                alt=""
-              />
+              <Image fill src="/assets/badge.svg" alt="" />
             </div>
           );
         })}

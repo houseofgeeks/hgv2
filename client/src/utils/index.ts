@@ -326,6 +326,6 @@ export {
   feeds,
   ProjectsData,
   ratingData,
-  projectData, 
-  blogData
+  projectData,
+  blogData,
 };

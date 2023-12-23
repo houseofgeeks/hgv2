@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -7,15 +7,6 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {
-      xs: "480px",
-      ss: "700px",
-      sm: "780px",
-      md: "1024px",
-      lg: "1186px",
-      xl: "1260px",
-      "2xl": "1536px",
-    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -24,7 +15,7 @@ const config: Config = {
       },
       colors: {
         primary: {
-          bg: "#121212",
+          bg: "black",
           color: "#EE2A7B",
           navBg: "#010203",
         },
@@ -36,7 +27,14 @@ const config: Config = {
         },
       },
     },
+    screens: {
+      xs: "480px",
+      ss: "700px",
+      sm: "780px",
+      md: "1024px",
+      lg: "1186px",
+    },
   },
   plugins: [require("tailwind-scrollbar-hide")],
 };
-export default config
+export default config;

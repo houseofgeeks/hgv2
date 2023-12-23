@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Space+Grotesk&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&family=Urbanist:wght@400;600;700&family=Varela&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Space+Grotesk&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&family=Urbanist:wght@400;600;700&family=Varela&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 /* footer css */
@@ -27,6 +27,10 @@
   }
 }
 
+*::-webkit-scrollbar {
+  width: 0;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -37,22 +41,34 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.hg{
-  font-family: 'Gemunu Libre';
+.hg {
+  font-family: "Gemunu Libre";
 }
 
-.bt1{
-  background: linear-gradient(114.77deg, rgba(25, 251, 155, 0.3) 3.4%, rgba(8, 113, 106, 0.3) 100%);
+.bt1 {
+  background: linear-gradient(
+    114.77deg,
+    rgba(25, 251, 155, 0.3) 3.4%,
+    rgba(8, 113, 106, 0.3) 100%
+  );
 }
 
-.bt2{
-  background: linear-gradient(114.77deg, rgba(239, 134, 255, 0.3) 3.4%, rgba(89, 25, 167, 0.3) 100%);
+.bt2 {
+  background: linear-gradient(
+    114.77deg,
+    rgba(239, 134, 255, 0.3) 3.4%,
+    rgba(89, 25, 167, 0.3) 100%
+  );
 }
 
-.bt3{
-  background: linear-gradient(114.77deg, rgba(90, 69, 247, 0.377) 3.4%, rgba(9, 12, 194, 0.3) 100%);
+.bt3 {
+  background: linear-gradient(
+    114.77deg,
+    rgba(90, 69, 247, 0.377) 3.4%,
+    rgba(9, 12, 194, 0.3) 100%
+  );
 }
 
-.read{
-  font-family: 'Space Grotesk';
+.read {
+  font-family: "Space Grotesk";
 }

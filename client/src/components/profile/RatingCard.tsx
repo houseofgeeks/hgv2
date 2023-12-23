@@ -20,7 +20,8 @@ const RatingCard: React.FC<ContestRatingProps<Props>> = ({ item }) => {
         target="_blank"
         className="underline underline-offset-2 inline-flex items-center font-semibold text-lg ss:text-2xl"
       >
-        {item.name}<BsArrowUpRight className="ml-1 text-xs" />
+        {item.name}
+        <BsArrowUpRight className="ml-1 text-xs" />
       </Link>
       <div className="mt-5 flex items-center">
         <div className="w-24 h-16 ss:w-28 ss:h-20 rounded-md flex items-center flex-col justify-center bg-secondary-bg">
@@ -28,7 +29,9 @@ const RatingCard: React.FC<ContestRatingProps<Props>> = ({ item }) => {
           <p className="text-xs ss:text-sm font-light">Rating</p>
         </div>
         <div className="w-24 h-16 ss:w-28 ss:h-20 rounded-md mx-4 flex items-center flex-col justify-center bg-secondary-bg">
-          <h2 className="font-semibold text-lg ss:text-2xl">{item.problemSolved}</h2>
+          <h2 className="font-semibold text-lg ss:text-2xl">
+            {item.problemSolved}
+          </h2>
           <p className="text-xs ss:text-sm font-light">Problem Solved</p>
         </div>
         <div className="w-24 h-16 ss:w-28 ss:h-20 rounded-md flex items-center flex-col justify-center bg-secondary-bg">

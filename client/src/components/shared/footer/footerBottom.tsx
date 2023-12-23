@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react'
-import githubLogo from "../../../../public/github_logo.svg";
+import Image from "next/image";
+import React from "react";
+import githubLogo from "@/../public/github_logo.svg";
 
 const FooterBottom = () => {
   return (
@@ -14,6 +14,6 @@ const FooterBottom = () => {
       </a>
     </div>
   );
-}
+};
 
-export default FooterBottom
+export default FooterBottom;
