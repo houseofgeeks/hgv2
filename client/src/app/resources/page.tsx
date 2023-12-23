@@ -1,5 +1,5 @@
 import React from "react";
-import WingCard from "@/app/resources/WingCard";
+import WingCard from "@/components/cards/WingCard";
 import { WingData } from "@/utils";
 
 const page = () => {

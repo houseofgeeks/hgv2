@@ -26,7 +26,7 @@ const config: Config = {
         primary: {
           bg: "#121212",
           color: "#EE2A7B",
-          navBg: "#01020333",
+          navBg: "#010203",
         },
         secondary: {
           bg: "#131414",
@@ -37,6 +37,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config

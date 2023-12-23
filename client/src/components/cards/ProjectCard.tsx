@@ -22,11 +22,11 @@ const ProjectCard = ({ title, lead, createdAt, wings, status, image, img }: Proj
         className="w-full border-b-2 border-black shadow-md"
       />
       <div className="flex flex-row justify-between mx-5 mt-2 mb-4">
-        <div className="text-center text-[12px] xs:text-xs">
+        <div className="text-center text-xs">
           <p className="text-gray-200 font-light">Started on</p>
           <div>{createdAt}</div>
         </div>
-        <div className="text-center text-[12px] xs:text-xs">
+        <div className="text-center text-xs">
           <p className="text-gray-200 font-light">Lead by</p>
           <div>{lead}</div>
         </div>
