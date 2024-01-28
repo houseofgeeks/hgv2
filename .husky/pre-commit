@@ -1,0 +1,4 @@
+npm run typecheck
+npm run format:fix
+
+git add .

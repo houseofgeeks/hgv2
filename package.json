@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.ts",
-    "format": "npx prettier . --write"
+    "format:fix": "npx prettier . --write",
+    "prepare": "husky",
+    "typecheck": "tsc --noEmit --pretty"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +35,7 @@
   },
   "devDependencies": {
     "@types/validator": "^13.11.8",
+    "husky": "^9.0.6",
     "prettier": "^3.2.4"
   }
 }
