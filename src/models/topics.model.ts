@@ -9,6 +9,9 @@ export interface InterfaceTopic {
   levelId: PopulatedDoc<InterfaceLevel & Document>;
 }
 
+/**
+ * Represents a topic schema.
+ */
 const topicSchema = new Schema({
   title: {
     type: String,

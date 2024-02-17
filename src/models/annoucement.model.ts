@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
-import { Types, Document, PopulatedDoc } from "mongoose";
-import { InterfaceUser } from "./user.model";
+import { Document, PopulatedDoc } from "mongoose";
+import InterfaceUser from "./user.model";
 
 export interface InterfaceAnnoucement {
   status: boolean;

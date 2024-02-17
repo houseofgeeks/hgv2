@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import { Types, Document, PopulatedDoc } from "mongoose";
-import { InterfaceUser } from "./user.model";
+import InterfaceUser from "./user.model";
 import { InterfaceWing } from "./wings.model";
 import { InterfaceAssignment } from "./assignment.model";
 
