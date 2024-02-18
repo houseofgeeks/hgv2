@@ -3,7 +3,7 @@ import type { Types, Document, PopulatedDoc } from "mongoose";
 import validator from "validator";
 import { InterfaceProject } from "./project.model";
 
-export interface InterfaceUser {
+export default interface InterfaceUser {
   _id: Types.ObjectId;
   name: string;
   email: string;
