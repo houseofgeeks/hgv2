@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import { Types, Document, PopulatedDoc } from "mongoose";
 import InterfaceUser from "./user.model";
 
-export interface InterfaceFeed {
+export default interface InterfaceFeed {
   _id: Types.ObjectId;
   status: boolean;
   feedDetails: string;
@@ -16,7 +16,7 @@ export interface InterfaceFeed {
  */
 const feedSchema = new Schema(
   {
-    staus: {
+    status: {
       type: Boolean,
       default: true,
     },
@@ -30,7 +30,7 @@ const feedSchema = new Schema(
         ref: "User",
       },
     ],
-    user: {
+    creatorId: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
