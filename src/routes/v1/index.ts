@@ -1,5 +1,6 @@
 import express from "express";
 import { createUser, signIn } from "../../controllers/user.controller";
+import { upload } from "../../config/multer.config";
 import {
   createFeed,
   upvotesFeed,
@@ -14,7 +15,7 @@ const router = express.Router();
 // We will separate each route to its own file
 
 // User Routes
-router.post("/signup", validateUserRequest, createUser);
+router.post("/signup", upload.single("image"), validateUserRequest, createUser);
 router.post("/signin", signIn);
 
 // Feed Routes
