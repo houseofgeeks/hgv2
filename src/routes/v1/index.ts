@@ -9,6 +9,8 @@ import {
   getFeed,
 } from "../../controllers/feed.controller";
 import { validateUserRequest } from "../../middlewares/user-request.middleware";
+import { createAnnoucement } from "../../controllers/annoucement.controller";
+import { checkAdmin } from "../../middlewares/auth.middleware";
 
 const router = express.Router();
 
@@ -21,16 +23,15 @@ router.post("/signin", signIn);
 // Feed Routes
 router.post("/feeds", createFeed);
 
-// Upvote Feed
 router.post("/feeds/upvote/:id", upvotesFeed);
 
-// Delete Feed
 router.delete("/feeds/:id", deleteFeed);
 
-// Get Feed
 router.get("/feeds/:id", getFeed);
 
-// Get All Feeds
-router.get("/feeds", getAllFeeds);
+router.get("/feeds", checkAdmin, getAllFeeds);
+
+// Annoucement Routes
+router.post("/announcements", checkAdmin, createAnnoucement);
 
 export default router;
