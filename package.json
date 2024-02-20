@@ -31,7 +31,8 @@
     "nodemon": "^3.0.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3",
-    "validator": "^13.11.0"
+    "validator": "^13.11.0",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "@types/validator": "^13.11.8",

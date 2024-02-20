@@ -1,5 +1,6 @@
 import InterfaceFeed from "../models/feed.model";
 import feedRepository from "../repositories/feed.repository";
+import logger from "../utils/logger.utils";
 
 const createFeed = async (data: InterfaceFeed) => {
   try {
@@ -51,9 +52,10 @@ const deleteFeed = async (id: string) => {
 const getAllFeeds = async () => {
   try {
     const response = await feedRepository.getAllFeeds();
+
     return response;
   } catch (error: unknown) {
-    console.log("There is Error in Feed - Services Layer");
+    logger.error("There is Error in Feed - Services Layer", error);
     throw error;
   }
 };
@@ -82,7 +84,6 @@ const upvotesFeed = async (id: string, userId: string) => {
 
     return data;
   } catch (error: unknown) {
-    console.log("There is Error in Feed - Services Layer", error);
     throw error;
   }
 };

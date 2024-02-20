@@ -3,6 +3,11 @@ import ExpressApp from "./config/ExpressApp";
 import { PORT } from "./config/index";
 import apiRoutes from "./routes";
 import { dbConnect } from "./config/db.config";
+import logger from "./utils/logger.utils";
+import {
+  errorMiddleware,
+  loggingMiddleware,
+} from "./middlewares/logging.middlewares";
 
 const startServer = async () => {
   const app = express();
@@ -10,10 +15,11 @@ const startServer = async () => {
   app.use(express.urlencoded({ extended: true }));
 
   await ExpressApp(app);
-
+  app.use(loggingMiddleware);
+  app.use(errorMiddleware);
   app.use("/api", apiRoutes);
   app.listen(PORT, async () => {
-    console.log(`Server listening on ${PORT}`);
+    logger.info(`Server is running on port ${PORT}`);
     await dbConnect();
   });
 };
