@@ -1,5 +1,6 @@
 import express from "express";
 import { createUser, signIn } from "../../controllers/user.controller";
+import { upload } from "../../config/multer.config";
 import {
   createFeed,
   upvotesFeed,
@@ -8,28 +9,35 @@ import {
   getFeed,
 } from "../../controllers/feed.controller";
 import { validateUserRequest } from "../../middlewares/user-request.middleware";
+import {
+  createAnnoucement,
+  deleteAnnoucement,
+  getAllAnnoucements,
+  getAnnoucement,
+  updateAnnoucement,
+} from "../../controllers/annoucement.controller";
+import { checkAdmin } from "../../middlewares/auth.middleware";
 
 const router = express.Router();
 
 // We will separate each route to its own file
 
 // User Routes
-router.post("/signup", validateUserRequest, createUser);
+router.post("/signup", upload.single("image"), validateUserRequest, createUser);
 router.post("/signin", signIn);
 
 // Feed Routes
 router.post("/feeds", createFeed);
-
-// Upvote Feed
 router.post("/feeds/upvote/:id", upvotesFeed);
-
-// Delete Feed
 router.delete("/feeds/:id", deleteFeed);
-
-// Get Feed
 router.get("/feeds/:id", getFeed);
+router.get("/feeds", checkAdmin, getAllFeeds);
 
-// Get All Feeds
-router.get("/feeds", getAllFeeds);
+// Annoucement Routes
+router.post("/announcements", checkAdmin, createAnnoucement);
+router.get("/announcements", getAllAnnoucements);
+router.get("/announcements/:id", getAnnoucement);
+router.delete("/announcements/:id", deleteAnnoucement);
+router.patch("/announcements/:id", updateAnnoucement);
 
 export default router;

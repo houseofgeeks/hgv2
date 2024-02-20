@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import { Document, PopulatedDoc } from "mongoose";
 import InterfaceUser from "./user.model";
 
-export interface InterfaceAnnoucement {
+export default interface InterfaceAnnoucement {
   status: boolean;
   announcementDetails: string;
   user: PopulatedDoc<InterfaceUser & Document>;

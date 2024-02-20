@@ -40,7 +40,7 @@ const validateUserRequest = (
   req.body.instagram_url = req.body.instagram_url || null;
   req.body.leetcode_username = req.body.leetcode_username || null;
   req.body.codeforces_username = req.body.codeforces_username || null;
-  req.body.image = image || null;
+  req.body.profile_image = image || null;
   req.body.userType = req.body.userType || "member";
 
   next();
