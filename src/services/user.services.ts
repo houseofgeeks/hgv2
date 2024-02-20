@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { JwtPayload } from "jsonwebtoken";
 import { JWT_SECRET } from "../config/index";
+import { signInRequest } from "../typeDefs/app-request";
 
 const createUser = async (
   data: InterfaceUser,
@@ -17,7 +18,7 @@ const createUser = async (
   }
 };
 
-const signIn = async (data: InterfaceUser): Promise<string | null> => {
+const signIn = async (data: any): Promise<string | null> => {
   try {
     const user = await userRepository.getUserByEmail(data.email);
     if (!user) {

@@ -2,6 +2,7 @@ import { Schema, model } from "mongoose";
 import type { Types, Document, PopulatedDoc } from "mongoose";
 import validator from "validator";
 import { InterfaceProject } from "./project.model";
+import bcrypt from "bcrypt";
 
 export default interface InterfaceUser {
   _id: Types.ObjectId;
@@ -91,5 +92,12 @@ const userSchema = new Schema(
   },
   { timestamps: true },
 );
+
+userSchema.pre("save", function process() {
+  const password = this.password;
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(password, salt);
+  this.password = hash;
+});
 
 export const User = model<InterfaceUser & Document>("User", userSchema);
