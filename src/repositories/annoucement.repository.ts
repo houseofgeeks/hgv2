@@ -12,7 +12,10 @@ const createAnnoucement = async (data: InterfaceAnnoucement) => {
 
 const getAnnoucementById = async (id: string) => {
   try {
-    const response = await Annoucement.findById(id).lean().exec();
+    const response = await Annoucement.findById(id)
+      .populate("user", "-password")
+      .lean()
+      .exec();
     return response;
   } catch (error) {
     console.log("There is Error in Annoucement - Repository Layer", error);
@@ -46,7 +49,10 @@ const deleteAnnoucement = async (id: string) => {
 
 const getAllAnnoucements = async () => {
   try {
-    const response = await Annoucement.find({}).lean();
+    const response = await Annoucement.find({})
+      .populate("user", "-password")
+      .lean()
+      .exec();
     return response;
   } catch (error) {
     console.log("There is Error in Annoucement - Repository Layer", error);

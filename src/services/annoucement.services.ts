@@ -60,4 +60,5 @@ export default {
   getAnnoucementById,
   updateAnnoucement,
   deleteAnnoucement,
+  getAllAnnoucements,
 };

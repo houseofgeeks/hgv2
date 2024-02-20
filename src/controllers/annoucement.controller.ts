@@ -7,9 +7,6 @@ const createAnnoucement = async (
   res: Response,
 ) => {
   try {
-    // const user = req.user._id;
-    // console.log(user);
-
     const response = await annoucementServices.createAnnoucement(req.body);
 
     return res.status(201).json({
@@ -27,7 +24,7 @@ const createAnnoucement = async (
   }
 };
 
-const getAnnoucementById = async (req: Request, res: Response) => {
+const getAnnoucement = async (req: Request, res: Response) => {
   try {
     const response = await annoucementServices.getAnnoucementById(
       req.params.id,
@@ -86,28 +83,28 @@ const deleteAnnoucement = async (req: Request, res: Response) => {
   }
 };
 
-// const getAllAnnoucements = async (req: Request, res: Response) => {
-//   try {
-//     const response = await annoucementServices.getAllAnnoucements();
-//     return res.status(200).json({
-//       data: response,
-//       message: "Annoucements Retrieved Successfully",
-//       success: true,
-//       err: {},
-//     });
-//   } catch (error: any) {
-//     return res.status(501).json({
-//       message: error.message || "Failed to retrieve Annoucements",
-//       success: false,
-//       err: { error },
-//     });
-//   }
-// };
+const getAllAnnoucements = async (req: Request, res: Response) => {
+  try {
+    const response = await annoucementServices.getAllAnnoucements();
+    return res.status(200).json({
+      data: response,
+      message: "Annoucements Retrieved Successfully",
+      success: true,
+      err: {},
+    });
+  } catch (error: any) {
+    return res.status(501).json({
+      message: error.message || "Failed to retrieve Annoucements",
+      success: false,
+      err: { error },
+    });
+  }
+};
 
 export {
   createAnnoucement,
-  getAnnoucementById,
+  getAnnoucement,
   updateAnnoucement,
   deleteAnnoucement,
-  //   getAllAnnoucements,
+  getAllAnnoucements,
 };
